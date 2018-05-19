@@ -1,0 +1,575 @@
+# Copyright (C) 2018 ZeeTheme
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WhiteDot 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/whitedot\n"
+"POT-Creation-Date: 2018-05-18 19:25+0000\n"
+"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2018-05-18 19:25+0000\n"
+"Last-Translator: Vishal Ranjan <admin@zeetheme.com>\n"
+"Language-Team: ZeeTheme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: inc/customizer.php:1337 inc/customizer.php:1372 inc/customizer.php:1407
+#: inc/customizer.php:1442 inc/customizer.php:1477 inc/customizer.php:1512
+msgid "#"
+msgstr ""
+
+#. number of items in the mini cart.
+#: inc/woocommerce.php:243
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:62
+msgid ", "
+msgstr ""
+
+#: inc/hooks/general-hooks.php:161
+msgid "Author : "
+msgstr ""
+
+#: inc/customizer.php:22
+msgid "Background"
+msgstr ""
+
+#: inc/customizer.php:334
+msgid "Blog Home/Archive"
+msgstr ""
+
+#: inc/customizer.php:380
+msgid "Blog Layout"
+msgstr ""
+
+#: inc/customizer.php:327
+msgid "Blog Settings"
+msgstr ""
+
+#: inc/customizer.php:226
+msgid "Body Font Size"
+msgstr ""
+
+#: inc/hooks/general-hooks.php:69
+msgid "By"
+msgstr ""
+
+#: inc/customizer.php:811
+msgid "Cart"
+msgstr ""
+
+#: inc/function-parts/setup.php:154
+msgid "Cart Widget"
+msgstr ""
+
+#: inc/hooks/general-hooks.php:76
+msgid "Category :"
+msgstr ""
+
+#: inc/customizer.php:847
+msgid "Checkout"
+msgstr ""
+
+#: inc/customizer.php:90
+msgid "Colors"
+msgstr ""
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr ""
+
+#. 1: comment count number, 2: title.
+#: comments.php:41
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/customizer.php:940
+msgid "Course Catalog Columns"
+msgstr ""
+
+#: inc/customizer.php:896
+msgid "Course Catelog"
+msgstr ""
+
+#: inc/customizer.php:1008
+msgid "Dashboard"
+msgstr ""
+
+#: inc/function-parts/setup.php:120
+msgid "Displays on the side of pages and posts with a sidebar."
+msgstr ""
+
+#: inc/function-parts/setup.php:138
+msgid "Displays widgets in the footer of pages and posts."
+msgstr ""
+
+#. %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:99
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: inc/hooks/general-hooks.php:167
+msgid "Email : "
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Experience the perfection in design of this Responsive, Fast and SEO-"
+"Friendly WordPress Theme. Your website is guaranteed to look and function "
+"great in any kind of display or device, from large TV monitors to the "
+"smallest mobile phones.This theme uses the latest and most stable coding "
+"practices to make your site is clean, efficient and Secure. WhiteDot is "
+"compatible with all the popular plugins from trusted and reliable developers "
+", including WooCommerce, LifterLMS, WPML, BuddyPress, bbPress and all major "
+"Page Builders. All the non-essential features used by bloated and slow "
+"multipurpose themes has been stripped away, to optimize your website "
+"performance and make your website lighter than a feather, and fast as a "
+"rocket.The visual customizer will allow you to quickly customize your theme "
+"and reach amazing results."
+msgstr ""
+
+#: inc/customizer.php:1347
+msgid "Facebook url"
+msgstr ""
+
+#: inc/customizer.php:185
+msgid "Font"
+msgstr ""
+
+#: inc/customizer.php:1532
+msgid "Footer Settings"
+msgstr ""
+
+#: inc/function-parts/setup.php:136
+msgid "Footer Widgets"
+msgstr ""
+
+#: inc/customizer.php:588
+msgid "General"
+msgstr ""
+
+#: inc/customizer.php:1452
+msgid "Google+ url"
+msgstr ""
+
+#: inc/customizer.php:402
+msgid "Grid Columns"
+msgstr ""
+
+#: inc/customizer.php:125
+msgid "Header Color"
+msgstr ""
+
+#: inc/customizer.php:603
+msgid "Header Mini Cart"
+msgstr ""
+
+#: inc/customizer.php:38
+msgid "Header Settings"
+msgstr ""
+
+#: inc/customizer.php:75
+msgid "Header Styles"
+msgstr ""
+
+#: inc/customizer.php:57
+msgid "Header Text Color"
+msgstr ""
+
+#: inc/meta-box.php:61
+msgid "Hide the title for this item : "
+msgstr ""
+
+#. URI of the theme
+msgid "http://zeetheme.com/whitedot"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://zeetheme.com/about"
+msgstr ""
+
+#: inc/customizer.php:1417
+msgid "Instagram url"
+msgstr ""
+
+#: 404.php:24
+msgid ""
+"It looks like nothing was found at this location. Maybe try to search here?"
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#. %s: post title
+#: inc/template-tags.php:82
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: inc/customizer.php:727
+msgid "Left"
+msgstr ""
+
+#. Name of the template
+#: inc/customizer.php:280 inc/customizer.php:354 inc/customizer.php:495
+#: inc/customizer.php:630 inc/customizer.php:755 inc/customizer.php:831
+#: inc/customizer.php:867 inc/customizer.php:916 inc/customizer.php:972
+#: inc/customizer.php:1028 inc/customizer.php:1101 inc/customizer.php:1179
+#: inc/customizer.php:1257
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/customizer.php:889
+msgid "LifterLMS Settings"
+msgstr ""
+
+#: inc/customizer.php:246
+msgid "Line Height"
+msgstr ""
+
+#: inc/customizer.php:143
+msgid "Link Color"
+msgstr ""
+
+#: inc/customizer.php:161
+msgid "Link Hover Color"
+msgstr ""
+
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:69
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#: inc/customizer.php:996
+msgid "Membership Catalog Columns"
+msgstr ""
+
+#: inc/customizer.php:952
+msgid "Membership Catelog"
+msgstr ""
+
+#: inc/customizer.php:467
+msgid "Next-Previous"
+msgstr ""
+
+#. Name of the template
+#: inc/customizer.php:284 inc/customizer.php:358 inc/customizer.php:499
+#: inc/customizer.php:634 inc/customizer.php:759 inc/customizer.php:835
+#: inc/customizer.php:871 inc/customizer.php:920 inc/customizer.php:976
+#: inc/customizer.php:1032 inc/customizer.php:1105 inc/customizer.php:1183
+#: inc/customizer.php:1261
+msgid "No Sidebar"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. 1: title.
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: 404.php:20
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: template-parts/content.php:52 inc/hooks/general-hooks.php:130
+#: inc/hooks/general-hooks.php:316
+msgid "Page"
+msgstr ""
+
+#: inc/customizer.php:468
+msgid "Page Numbers"
+msgstr ""
+
+#: inc/customizer.php:275
+msgid "Page Sidebar Layout"
+msgstr ""
+
+#: inc/customizer.php:464
+msgid "Pageination Style"
+msgstr ""
+
+#: template-parts/content.php:48 inc/hooks/general-hooks.php:126
+msgid "Pages:"
+msgstr ""
+
+#: inc/customizer.php:1487
+msgid "Pintrest url"
+msgstr ""
+
+#. %s: post author.
+#: inc/template-tags.php:45
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. %s: post date.
+#: inc/template-tags.php:29
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#. 1: list of categories.
+#: inc/template-tags.php:65
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/function-parts/setup.php:43
+msgid "Primary"
+msgstr ""
+
+#: inc/customizer.php:654
+msgid "Product Columns"
+msgstr ""
+
+#: inc/function-parts/setup.php:171
+msgid "Product Filter Widgets"
+msgstr ""
+
+#: inc/customizer.php:674
+msgid "Product Per Page "
+msgstr ""
+
+#: inc/hooks/general-hooks.php:293
+msgid "Read the Post"
+msgstr ""
+
+#. 1: link to WP admin new post page.
+#: template-parts/content-none.php:24
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: inc/customizer.php:779
+msgid "Related Product Columns"
+msgstr ""
+
+#: inc/customizer.php:799
+msgid "Related Product Per Page"
+msgstr ""
+
+#: inc/customizer.php:1070
+msgid "Remove Duplicate Titles"
+msgstr ""
+
+#: inc/customizer.php:728
+msgid "Right"
+msgstr ""
+
+#. Name of the template
+#: inc/customizer.php:288 inc/customizer.php:362 inc/customizer.php:503
+#: inc/customizer.php:638 inc/customizer.php:763 inc/customizer.php:839
+#: inc/customizer.php:875 inc/customizer.php:924 inc/customizer.php:980
+#: inc/customizer.php:1036 inc/customizer.php:1109 inc/customizer.php:1187
+#: inc/customizer.php:1265
+msgid "Right Sidebar"
+msgstr ""
+
+#. %s: search query.
+#: inc/hooks/general-hooks.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/customizer.php:610
+msgid "Shop"
+msgstr ""
+
+#: inc/customizer.php:724
+msgid "Shop Filter Layout"
+msgstr ""
+
+#: inc/customizer.php:694
+msgid "Show Add to Cart Button"
+msgstr ""
+
+#: inc/customizer.php:1330
+msgid "Show Facebook Icon"
+msgstr ""
+
+#: inc/customizer.php:1546
+msgid "Show Footer Branding"
+msgstr ""
+
+#: inc/customizer.php:1435
+msgid "Show Google+ Icon"
+msgstr ""
+
+#: inc/customizer.php:1400
+msgid "Show Instagram Icon"
+msgstr ""
+
+#: inc/customizer.php:446 inc/customizer.php:543
+msgid "Show Meta Author"
+msgstr ""
+
+#: inc/customizer.php:1128 inc/customizer.php:1206 inc/customizer.php:1284
+msgid "Show Meta Author(Below Title)"
+msgstr ""
+
+#: inc/customizer.php:564
+msgid "Show Meta Category"
+msgstr ""
+
+#: inc/customizer.php:425 inc/customizer.php:522
+msgid "Show Meta Date"
+msgstr ""
+
+#: inc/customizer.php:1149 inc/customizer.php:1227 inc/customizer.php:1305
+msgid "Show Meta Date(Below Title)"
+msgstr ""
+
+#: inc/customizer.php:1052
+msgid "Show Navigation Icons"
+msgstr ""
+
+#: inc/customizer.php:1470
+msgid "Show Pintrest Icon"
+msgstr ""
+
+#: inc/customizer.php:709
+msgid "Show Product Filter"
+msgstr ""
+
+#: inc/customizer.php:1561
+msgid "Show Social Icons"
+msgstr ""
+
+#: inc/customizer.php:1365
+msgid "Show Twitter Icon"
+msgstr ""
+
+#: inc/customizer.php:1505
+msgid "Show Youtube Icon"
+msgstr ""
+
+#: inc/function-parts/setup.php:118
+msgid "Sidebar"
+msgstr ""
+
+#: inc/customizer.php:349 inc/customizer.php:490 inc/customizer.php:625
+#: inc/customizer.php:750 inc/customizer.php:826 inc/customizer.php:862
+#: inc/customizer.php:911 inc/customizer.php:967 inc/customizer.php:1023
+#: inc/customizer.php:1096 inc/customizer.php:1174 inc/customizer.php:1252
+msgid "Sidebar Layout"
+msgstr ""
+
+#: inc/customizer.php:261
+msgid "Sidebar Settings"
+msgstr ""
+
+#: inc/customizer.php:306
+msgid "Sidebar Styles"
+msgstr ""
+
+#: inc/customizer.php:1081
+msgid "Single Course"
+msgstr ""
+
+#: inc/customizer.php:1159
+msgid "Single Lesson"
+msgstr ""
+
+#: inc/customizer.php:1237
+msgid "Single Membership"
+msgstr ""
+
+#: inc/customizer.php:475
+msgid "Single Post"
+msgstr ""
+
+#: inc/customizer.php:735
+msgid "Single Product"
+msgstr ""
+
+#: header.php:25
+msgid "Skip to content"
+msgstr ""
+
+#: inc/customizer.php:1316
+msgid "Social"
+msgstr ""
+
+#: template-parts/content-none.php:37
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#. 1: list of tags.
+#: inc/template-tags.php:72
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/customizer.php:107
+msgid "Text Color"
+msgstr ""
+
+#: inc/function-parts/setup.php:156
+msgid ""
+"This widget displays on cart icon hover. You can add the \"Cart\" Widget "
+"here."
+msgstr ""
+
+#: inc/function-parts/setup.php:173
+msgid ""
+"This widget displays Product Filter on your shop page. You can add "
+"Woocommerce product filter widgets here."
+msgstr ""
+
+#: inc/hooks/header-hooks.php:95
+msgid "toggle menu"
+msgstr ""
+
+#: inc/customizer.php:1382
+msgid "Twitter url"
+msgstr ""
+
+#: inc/customizer.php:169
+msgid "Typography"
+msgstr ""
+
+#: inc/woocommerce.php:239 inc/woocommerce.php:296
+#: inc/hooks/header-hooks.php:204 inc/hooks/header-hooks.php:235
+msgid "View your shopping cart"
+msgstr ""
+
+#. Name of the theme
+msgid "WhiteDot"
+msgstr ""
+
+#: inc/customizer.php:581
+msgid "WooCommerce Settings"
+msgstr ""
+
+#: inc/customizer.php:1522
+msgid "Youtube url"
+msgstr ""
+
+#. Author of the theme
+#: inc/hooks/general-hooks.php:360
+msgid "ZeeTheme"
+msgstr ""
