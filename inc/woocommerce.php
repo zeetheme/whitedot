@@ -293,7 +293,7 @@ add_filter( 'wp_ajax_mode_theme_update_mini_cart', 'whitedot_theme_update_mini_c
 function whitedot_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	?>
-		<a class="wdcart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'whitedot' ); ?>"><?php echo sprintf (_n( '%d', '%d', 'whitedot', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></a> 
+		<a class="wdcart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'whitedot' ); ?>"><?php echo WC()->cart->get_cart_contents_count(); ?></a> 
 	<?php
 
 	$fragments['a.wdcart-contents'] = ob_get_clean();

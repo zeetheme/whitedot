@@ -21,9 +21,6 @@ add_action( 'widgets_init', 'whitedot_widgets_init' );
 //Footer Widget
 add_action( 'widgets_init', 'whitedot_footer_widgets_init' );
 
-//Woocommerce Cart Widget in Header
-add_action( 'widgets_init', 'whitedot_woo_cart_widgets_init' );
-
 //Woocommerce Product Filter Widget
 add_action( 'widgets_init', 'whitedot_woo_product_filter_widgets_init' );
 

@@ -149,23 +149,6 @@ function whitedot_footer_widgets_init() {
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function whitedot_woo_cart_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Cart Widget', 'whitedot' ),
-		'id'            => 'widget-cart',
-		'description'   => esc_html__( 'This widget displays on cart icon hover. You can add the "Cart" Widget here.', 'whitedot' ),
-		'before_widget' => '<div div id="%1$s" class="wd-cart-widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="wd-cart-widget-head">',
-		'after_title'   => '</h2>',
-	) );
-}
-
-/**
- * Register cart widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
 function whitedot_woo_product_filter_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Product Filter Widgets', 'whitedot' ),

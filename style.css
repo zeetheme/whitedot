@@ -4,7 +4,7 @@ Theme URI: http://zeetheme.com/whitedot
 Author: ZeeTheme
 Author URI: https://zeetheme.com/about
 Description: Experience the perfection in design of this Responsive, Fast and SEO-Friendly WordPress Theme. Your website is guaranteed to look and function great in any kind of display or device, from large TV monitors to the smallest mobile phones.This theme uses the latest and most stable coding practices to make your site is clean, efficient and Secure. WhiteDot is compatible with all the popular plugins from trusted and reliable developers , including WooCommerce, LifterLMS, WPML, BuddyPress, bbPress and all major Page Builders. All the non-essential features used by bloated and slow multipurpose themes has been stripped away, to optimize your website performance and make your website lighter than a feather, and fast as a rocket.The visual customizer will allow you to quickly customize your theme and reach amazing results.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: whitedot
@@ -51,9 +51,7 @@ Source: http://fontawesome.io/
 	14.1 Captions
 	14.2 Galleries
 15 WooCommerce
-16 LifterLMS
-17 bbPress
-18 BuddyPress
+16 bbPress
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1 Normalize
@@ -1189,7 +1187,8 @@ button.secondary,
 input[type="reset"],
 input[type="button"].secondary,
 input[type="reset"].secondary,
-input[type="submit"].secondary{
+input[type="submit"].secondary,
+.single-forum #subscription-toggle .subscription-toggle{
 	background: #0ecae2;
 	color: #fff;
 	margin-top: 10px;
@@ -1208,7 +1207,9 @@ input[type="button"].secondary:focus,
 input[type="reset"].secondary:hover,
 input[type="reset"].secondary:focus,
 input[type="submit"].secondary:hover,
-input[type="submit"].secondary:focus {
+input[type="submit"].secondary:focus,
+.single-forum #subscription-toggle .subscription-toggle:hover,
+.single-forum #subscription-toggle .subscription-toggle:focus {
 	background: #0dbbd1;
 	color: #fff;
 }
@@ -1407,7 +1408,9 @@ input + input[type="submit"] {
 	max-width: 100%;
 }
 
-.secondary {
+.secondary,
+.secondary-left,
+.secondary-right {
 	padding-bottom: 50px;
 }
 
@@ -1450,16 +1453,18 @@ input + input[type="submit"] {
 		padding: 50px 0;
 	}
 
-	.page-template-template-left-sidebar .secondary {
-		float: left!important;
+	.secondary-left,
+	.secondary-right{
+		padding: 50px 0;
 	}
 
-	.page-template-template-right-sidebar .secondary {
-		float: right!important;
+	.has-sidebar .secondary-left{
+		width: 30%;
+		float: left;
 	}
-
-	.page-template-template-no-sidebar .secondary {
-		display: none;
+	.has-sidebar .secondary-right{
+		width: 30%;
+		float: right;
 	}
 }
 
@@ -1597,7 +1602,10 @@ display:none}
 	margin: 0 0 1.5em;
 }
 
-#primary {
+#primary,
+#primary-right,
+#primary-left,
+#primary-full-width {
 	padding: 50px 0;
 }
 
@@ -1781,6 +1789,19 @@ display:none}
 .wd-single-wrap {
 	background: #fff;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.boxed-layout {
+	background: #fff;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.boxed-layout .wd-post-title {
+    padding: 1.5em 20px 0 20px;
+}
+
+.boxed-layout .wd-custom-content{
+	padding: 0 20px;
 }
 
 .wd-single-featured-img {
@@ -1979,40 +2000,24 @@ display:none}
 
 @media (min-width: 768px){
 
-	.has-sidebar div#primary {
+	.has-sidebar #primary {
 		width: 68%;
 		float: left;
 	}
 
-	.page-template-template-left-sidebar.has-sidebar #primary {
-		float: right!important;
-		width: 68%!important;
+	.has-sidebar #primary-right {
+		float: right;
+		width: 68%;
 	}
 
-	.page-template-template-left-sidebar.has-sidebar .secondary{
-		display: block!important;
-		width: 30%!important;
-		float: left!important;
+	.has-sidebar #primary-left {
+		float: left;
+		width: 68%;
 	}
 
-	.page-template-template-right-sidebar.has-sidebar #primary {
-		float: left!important;
-		width: 68%!important;
-	}
-
-	.page-template-template-right-sidebar.has-sidebar .secondary{
-		display: block!important;
-		width: 30%!important;
-		float: left!important;
-	}
-
-	.page-template-template-no-sidebar.has-sidebar #primary {
-		float: none!important;
-		width: 100%!important;
-	}
-
-	.page-template-template-no-sidebar.has-sidebar .secondary {
-		display: none!important;
+	.has-sidebar #primary-full-width {
+		float: none;
+		width: 100%;
 	}
 
 	.full-width{
@@ -2109,7 +2114,7 @@ display:none}
 	background: #f9f9f9;
 }
 
-.reply a {
+.comments-area .reply a {
 	background: #f0f0f0;
 	color: #666;
 	padding: 2px 10px;
@@ -2606,5 +2611,189 @@ span.stock.out-of-stock {
     }
 
 
+}
+
+/*--------------------------------------------------------------
+16 bbPress
+--------------------------------------------------------------*/
+
+.bbp-breadcrumb {
+	margin-bottom: 30px;
+}
+
+.bbpress-forums ul.bbp-lead-topic,
+#bbpress-forums ul.bbp-topics,
+#bbpress-forums ul.bbp-forums,
+#bbpress-forums ul.bbp-replies,
+#bbpress-forums ul.bbp-search-results{
+	border: 0;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#bbpress-forums ul.bbp-lead-topic,
+#bbpress-forums ul.bbp-topics,
+#bbpress-forums ul.bbp-forums,
+#bbpress-forums ul.bbp-replies,
+#bbpress-forums ul.bbp-search-results{
+	font-size: 16px;
+}
+
+#bbpress-forums .bbp-forum-info .bbp-forum-content,
+#bbpress-forums p.bbp-topic-meta {
+	font-size: 14px;
+}
+
+#bbpress-forums li.bbp-header {
+	background: #ffffff;
+}
+
+#bbpress-forums div.odd,
+#bbpress-forums ul.odd {
+	background-color: #ffffff;
+}
+
+#bbpress-forums li.bbp-header,
+#bbpress-forums li.bbp-footer{
+	background: #fff;
+}
+
+#bbpress-forums li.bbp-header {
+	border-bottom: 1px solid #d1d1d1;
+}
+
+a.bbp-topic-permalink{
+	color: #555;
+	font-size: 16px;
+	font-weight: 700
+
+}
+
+a.bbp-topic-permalink:hover{
+	color: #888;
+
+}
+
+a.bbp-forum-title{
+	color: #444;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+a.bbp-forum-title:hover {
+	color: #746f6e;
+}
+
+#bbpress-forums {
+	overflow: unset;
+}
+
+div.bbp-template-notice,
+div.indicator-hint,
+div.bbp-template-notice.info {
+	border: 0;
+	background-color: #fbfbfb;
+	padding: 5px 15px;
+	font-size: 16px;
+	color: #666;
+	border: .5px solid #f3f3f3;
+}
+
+.bbp-topic-form, .bbp-reply-form {
+	background: #fff;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	padding: 15px;
+	font-size: 16px
+}
+
+#bbpress-forums fieldset.bbp-form textarea,
+#bbpress-forums fieldset.bbp-form input{
+	box-shadow: none;
+	background: #eee;
+	color: #777;
+
+}
+
+#bbpress-forums p.bbp-topic-meta img.avatar,
+#bbpress-forums ul.bbp-reply-revision-log img.avatar,
+#bbpress-forums ul.bbp-topic-revision-log img.avatar,
+#bbpress-forums div.bbp-template-notice img.avatar,
+#bbpress-forums .widget_display_topics img.avatar,
+#bbpress-forums .widget_display_replies img.avatar
+#bbpress-forums p.bbp-topic-meta img.avatar,
+#bbpress-forums ul.bbp-reply-revision-log img.avatar,
+#bbpress-forums ul.bbp-topic-revision-log img.avatar,
+#bbpress-forums div.bbp-template-notice img.avatar,
+#bbpress-forums .widget_display_topics img.avatar,
+#bbpress-forums .widget_display_replies img.avatar {
+	float: none;
+	margin-bottom: -3px;
+	border: 0;
+}
+
+#bbpress-forums p.bbp-topic-meta span a {
+	font-size: 14px;
+	color: #444;
+}
+
+li.bbp-topic-freshness a {
+	font-size: 10px;
+	color: #888;
+}
+
+.single-forum #subscription-toggle {
+	display: inline-block;
+	float: none;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 20px 0;
+}
+
+.single-forum #subscription-toggle .subscription-toggle {
+	padding: 10px;
+	font-size: 16px;
+	color: #fff;
+}
+
+input + button, input + input[type="button"],
+input + input[type="submit"] {
+    border: 0;
+    padding: 0.85em 2em;
+    box-shadow: none;
+}
+
+#bbpress-forums .bbp-body .forum:hover,
+#bbpress-forums .bbp-body .topic:hover {
+	background: #f7f7f7;
+}
+
+.single-topic #bbpress-forums .bbp-body .forum:hover,
+.single-topic #bbpress-forums .bbp-body .topic:hover{
+	background: #fff;
+}
+
+.bbpress.has-sidebar #primary{
+	width: 100%;
+	float: none;
+}
+
+.bbpress.has-sidebar .secondary{
+	display: none;
+}
+
+#bbpress-forums .bbp-body .forum,
+#bbpress-forums .bbp-body .topic {
+	padding: 20px 15px!important;
+}
+
+#bbpress-forums .bbp-header {
+    padding: 8px 15px!important;
+}
+
+.bbp-admin-links a:hover {
+	color: #2196F3;
+}
+
+.bbp-admin-links a {
+	color: #666;
 }
 

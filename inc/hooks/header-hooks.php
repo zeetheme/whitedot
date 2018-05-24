@@ -201,19 +201,15 @@ function whitedot_header_cart(){
 				<a href="<?php echo wc_get_cart_url(); ?>">
 					<i class="fa fa-shopping-cart pkcart-icon" aria-hidden="true"></i>
 				</a>
-				<a class="wdcart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'whitedot' ); ?>"><?php echo sprintf (_n( '%d', '%d', 'whitedot', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
+				<a class="wdcart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'whitedot' ); ?>">
+
+					<?php echo WC()->cart->get_cart_contents_count(); ?>
 					
 				</a> 
 			</div><!--.wd-cart-container -->
-
-			<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-				<?php if ( is_active_sidebar( 'widget-cart' )  ) : ?>
-					<div class="wd_minicart_hover non-active woocommerce widget_shopping_cart">
-						<?php dynamic_sidebar( 'widget-cart' ); ?>	
+					<div class="wd_minicart_hover">
+						<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
 					</div><!--.widget_shopping_cart -->
-				<?php endif; ?>
-			<?php endif; ?>
-
 		</span>
 	<?php }
 
@@ -232,7 +228,9 @@ function whitedot_mob_header_cart(){
 				<a href="<?php echo wc_get_cart_url(); ?>">
 					<i class="fa fa-shopping-cart pkcart-icon" aria-hidden="true"></i>
 				</a>
-				<a class="wdcart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'whitedot' ); ?>"><?php echo sprintf (_n( '%d', '%d', 'whitedot', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
+				<a class="wdcart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'whitedot' ); ?>">
+
+					<?php echo WC()->cart->get_cart_contents_count(); ?>
 					
 				</a> 
 			</div><!--wd-cart-container-mob -->

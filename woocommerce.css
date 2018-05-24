@@ -359,6 +359,7 @@ WooCommerce styles override
 
 .woocommerce table.shop_attributes td{
 	padding-left: 30px;
+	font-style: normal;
 }
 
 /*----------reviews------------*/

@@ -10,7 +10,7 @@
 get_header();
 ?>
 		
-	<div id="primary" class="content-area sidebar-none">
+	<div id="primary-full-width" class="sidebar-none">
 		<main id="main" class="site-main">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post();
@@ -25,7 +25,5 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-	<?php get_sidebar(); ?>
 	
 <?php get_footer();

@@ -2,7 +2,7 @@
 /**
  * The template for displaying Right Sidebar pages.
  *
- * Template Name: Right Sidebar
+ * Template Name: Right Sidebar Boxed
  *
  * @package whitedot
  */
@@ -12,17 +12,17 @@ get_header();
 		
 	<div id="primary-left" class="sidebar-right">
 		<main id="main" class="site-main">
+			<div class="boxed-layout">
+				<?php if (have_posts()) : while (have_posts()) : the_post();
 
-		<?php if (have_posts()) : while (have_posts()) : the_post();
+					get_template_part( 'template-parts/content', 'page' );
 
-			get_template_part( 'template-parts/content', 'page' );
+				endwhile; else : 
 
-		endwhile; else : 
+					get_template_part( 'template-parts/content', 'none' );
 
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
+				endif; ?>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
