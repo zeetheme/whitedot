@@ -27,7 +27,7 @@
 	/**
 	 * whitedot_before_header hook.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 */
 	do_action( 'whitedot_before_header' );
@@ -35,7 +35,7 @@
 	/**
 	 * whitedot_header_content hook.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 */
 	do_action( 'whitedot_header_content' );
@@ -44,7 +44,7 @@
 	/**
 	 * whitedot_after_header hook.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 */
 	do_action( 'whitedot_after_header' );?>
@@ -73,7 +73,7 @@
 	/**
 	 * whitedot_before_footer hook.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	do_action( 'whitedot_before_footer' ); 
 
@@ -85,7 +85,7 @@
 		/**
 		 * whitedot_before_footer_content hook.
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 */
 		do_action( 'whitedot_before_footer_content' ); 
 
@@ -101,7 +101,7 @@
 		/**
 		 * whitedot_after_footer_content hook.
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 */
 		do_action( 'whitedot_after_footer_content' );
 		?>
@@ -112,7 +112,7 @@
 	/**
 	 * whitedot_after_footer hook.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	do_action( 'whitedot_after_footer' ); 
 

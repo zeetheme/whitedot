@@ -3,7 +3,7 @@
 Contributors: ZeeTheme
 Requires at least: 4.5
 Tested up to: 4.9.6
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-background, custom-colors, threaded-comments, theme-options
@@ -72,4 +72,6 @@ GNU General Public License for more details.
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 
 *Font Awesome icons, Copyright Dave Gandy, License: SIL Open Font License, version 1.1, Source: http://fontawesome.io/
+
+*WhiteDot Screenshot, (C)Copyright ZeeTheme, Source: https://zeetheme.com/wp-content/uploads/2018/05/screenshot.png
 

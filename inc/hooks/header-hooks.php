@@ -8,7 +8,7 @@
 /**
  * WhiteDot Header Content
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_header_content(){
 
@@ -20,7 +20,7 @@ function whitedot_header_content(){
 	/**
 	 * whitedot_before_header_wrap hook.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 */
 	do_action( 'whitedot_before_header_wrap' ); ?>
@@ -31,7 +31,7 @@ function whitedot_header_content(){
 		/**
 		 * whitedot_header_content_before hook.
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 *
 		 * @hooked whitedot_header_hamburger - 10
 		 */
@@ -44,7 +44,7 @@ function whitedot_header_content(){
 			/**
 			 * whitedot_header_branding hook.
 			 *
-			 * @since 1.0
+			 * @since 1.0.0
 			 *
 			 * @hooked whitedot_header_logo - 10
 			 * @hooked whitedot_header_identity - 20
@@ -57,7 +57,7 @@ function whitedot_header_content(){
 		/**
 		 * whitedot_header_nav hook.
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 *
 		 * @hooked whitedot_header_navigation - 10
 		 */
@@ -67,7 +67,7 @@ function whitedot_header_content(){
 		/**
 		 * whitedot_header_content_after hook.
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 *
 		 * @hooked whitedot_mob_header_cart - 10
 		 */
@@ -85,7 +85,7 @@ function whitedot_header_content(){
 /**
  * WhiteDot Header Hamburger
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_header_hamburger(){
 
@@ -102,7 +102,7 @@ function whitedot_header_hamburger(){
 /**
  * WhiteDot Header Logo
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_header_logo(){
 
@@ -117,7 +117,7 @@ function whitedot_header_logo(){
 /**
  * WhiteDot Header Identity
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_header_identity(){
 
@@ -146,7 +146,7 @@ function whitedot_header_identity(){
 /**
  * WhiteDot Header Navigation
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_header_navigation(){
 	?>
@@ -157,7 +157,7 @@ function whitedot_header_navigation(){
 		/**
 		 * whitedot_before_header_navigation hook.
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 *
 		 */
 		do_action( 'whitedot_before_header_navigation' ); ?>
@@ -178,7 +178,7 @@ function whitedot_header_navigation(){
 		 *
 		 * @hooked whitedot_header_cart - 10
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 *
 		 */
 		do_action( 'whitedot_after_header_navigation' ); ?>
@@ -191,7 +191,7 @@ function whitedot_header_navigation(){
 /**
  * WhiteDot Header Cart
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_header_cart(){
 
@@ -218,7 +218,7 @@ function whitedot_header_cart(){
 /**
  * WhiteDot Header Cart
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_mob_header_cart(){
 

@@ -28,7 +28,7 @@
 	/**
 	 * whitedot_before_header hook.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 */
 	do_action( 'whitedot_before_header' );
@@ -36,7 +36,7 @@
 	/**
 	 * whitedot_header_content hook.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 */
 	do_action( 'whitedot_header_content' );
@@ -45,7 +45,7 @@
 	/**
 	 * whitedot_after_header hook.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 */
 	do_action( 'whitedot_after_header' );?>
@@ -54,3 +54,12 @@
 
 	<div id="content" class="site-content">
 		<div class="col-full">
+
+			<?php
+			/**
+			 * whitedot_header_end hook.
+			 *
+			 * @since 1.0.2
+			 *
+			 */
+			do_action( 'whitedot_header_end' );

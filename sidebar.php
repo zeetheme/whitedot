@@ -7,14 +7,30 @@
  * @package WhiteDot
  */
 
-if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
-	<div itemtype="http://schema.org/WPSideBar" itemscope class="secondary">
-		<div class="wd-sidebar">
-			<div class="wd-widget-area">
-				<?php dynamic_sidebar( 'sidebar-1' ); ?>	
-			</div><!--.wd-widget-area-->
-		</div><!--.wd-sidebar-->
-	</div><!--.secondary-->
-<?php endif; ?>
+
+/**
+ * whitedot_before_sidebar hook.
+ *
+ * @since 1.0.0
+ *
+ */
+do_action( 'whitedot_before_sidebar' );
+
+/**
+ * Functions hooked into whitedot_the_sidebar add_action
+ *
+ * @hooked whitedot_main_sidebar  - 10
+ *
+ * @since 0.1
+ */
+do_action( 'whitedot_the_sidebar' );
+
+/**
+ * whitedot_after_sidebar hook.
+ *
+ * @since 1.0.0
+ *
+ */
+do_action( 'whitedot_after_sidebar' );
 
 

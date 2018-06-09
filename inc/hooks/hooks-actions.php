@@ -43,6 +43,9 @@ add_action('whitedot_page_content_before','whitedot_post_header', 20);
 add_action('whitedot_page_custom_after','whitedot_post_pagination', 10);
 add_action('whitedot_page_content_after','whitedot_post_comment', 10);
 
+//SideBar Actions
+add_action('whitedot_the_sidebar','whitedot_main_sidebar', 10);
+
 //Whitedot Search Page actions
 add_action('whitedot_search_form','whitedot_search_page_form', 10);
 

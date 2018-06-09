@@ -336,8 +336,8 @@ LifterLMS styles override
 
 .single-lesson .single-category-meta,
 .single-lesson .wd-about-author,
-.single-lesson .wd-date:after
-.single-llms_quiz .wd-about-author,,
+.single-lesson .wd-date:after,
+.single-llms_quiz .wd-about-author,
 .single-llms_quiz .single-category-meta{
     display: none;
 }
@@ -536,7 +536,11 @@ LifterLMS styles override
     height: 50px;
 }
 
-.llms-syllabus-wrapper .not-enrolled .llms-lesson-preview .llms-extra {
+.llms-lesson-preview.is-complete .llms-lesson-link-locked {
+    padding-left: 15px;
+}
+
+.not-enrolled .llms-syllabus-wrapper .llms-lesson-preview .llms-extra {
     float: right;
 }
 

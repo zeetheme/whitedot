@@ -7,22 +7,23 @@
 /**
  * Whitedot blog grid wrap
  *
- * @since 1.0
+ * @since 1.0.0
  */
 add_action('template_redirect', 'whitedot_show_blog_grid_wrap');
 function whitedot_show_blog_grid_wrap()
 {
 	if( 'style-2' === get_theme_mod( 'whitedot_blog_home_layout' ) ) {
-
-		add_action('whitedot_home_loop_before','whitedot_blog_grid_wrap_start', 10);
-		add_action('whitedot_blog_home_pagination','whitedot_blog_grid_wrap_end', 5);
+        if ( !is_front_page() && is_home() ) {
+    		add_action('whitedot_home_loop_before','whitedot_blog_grid_wrap_start', 10);
+    		add_action('whitedot_blog_home_pagination','whitedot_blog_grid_wrap_end', 5);
+        }
 	}
 }
 
 /**
  * Whitedot blog grid wrap start
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_blog_grid_wrap_start(){
 
@@ -35,7 +36,7 @@ function whitedot_blog_grid_wrap_start(){
 /**
  * Whitedot blog grid wrap end
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_blog_grid_wrap_end(){
 
@@ -49,7 +50,7 @@ function whitedot_blog_grid_wrap_end(){
 /**
  * Whitedot Customizer Google Fonts
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_customizer_google_fonts() {
 
@@ -141,7 +142,7 @@ function whitedot_customizer_google_fonts() {
 /**
  * Whitedot Show Footer Branding
  *
- * @since 1.0
+ * @since 1.0.0
  */
 add_action('template_redirect', 'whitedot_display_footer_branding');
 function whitedot_display_footer_branding()
@@ -158,7 +159,7 @@ function whitedot_display_footer_branding()
 /**
  * Whitedot Show Footer Social Icons
  *
- * @since 1.0
+ * @since 1.0.0
  */
 add_action('template_redirect', 'whitedot_display_footer_social_icons');
 function whitedot_display_footer_social_icons()
@@ -173,7 +174,7 @@ function whitedot_display_footer_social_icons()
 /**
  * Whitedot Blog Pagination Style
  *
- * @since 1.0
+ * @since 1.0.0
  */
 add_action('template_redirect', 'whitedot_customizer_pagination_style');
 function whitedot_customizer_pagination_style()
@@ -191,7 +192,7 @@ function whitedot_customizer_pagination_style()
 /**
  * LifterLMS Dashboard sidebar layout
  *
- * @since 1.0
+ * @since 1.0.0
  */
 add_action('lifterlms_before_student_dashboard_content', 'whitedot_llms_dashboard_custom_css', 1);
 function whitedot_llms_dashboard_custom_css()
@@ -202,7 +203,7 @@ function whitedot_llms_dashboard_custom_css()
 /**
  * LifterLMS Dashboard sidebar layout
  *
- * @since 1.0
+ * @since 1.0.0
  */
 add_action('whitedot_dashboard_style', 'whitedot_llms_dashboard_sidebar_css', 1);
 function whitedot_llms_dashboard_sidebar_css()

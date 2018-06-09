@@ -8,7 +8,7 @@
 /**
  * Whitedot Search Form
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_search_page_form(){
 
@@ -28,11 +28,30 @@ function whitedot_search_page_form(){
 }
 
 
+/**
+ * Whitedot Main SideBar
+ *
+ * @since 1.0.0
+ */
+function whitedot_main_sidebar(){
+
+	if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
+		<div itemtype="http://schema.org/WPSideBar" itemscope class="secondary">
+			<div class="wd-sidebar">
+				<div class="wd-widget-area">
+					<?php dynamic_sidebar( 'sidebar-1' ); ?>	
+				</div><!--.wd-widget-area-->
+			</div><!--.wd-sidebar-->
+		</div><!--.secondary-->
+	<?php endif; 
+
+}
+
 
 /**
  * WhiteDot Post Thumbnail
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_thumbnail(){
 
@@ -48,7 +67,7 @@ function whitedot_thumbnail(){
 /**
  * WhiteDot Post Header
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_post_header(){
 
@@ -60,7 +79,7 @@ function whitedot_post_header(){
 /**
  * WhiteDot Post Meta
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_post_meta(){
 	?>
@@ -83,7 +102,7 @@ function whitedot_post_meta(){
 /**
  * WhiteDot Post Content
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_post_content(){
 	?>
@@ -118,7 +137,7 @@ function whitedot_post_content(){
 /**
  * WhiteDot Post Pagination
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_post_pagination(){
 
@@ -135,7 +154,7 @@ function whitedot_post_pagination(){
 /**
  * WhiteDot Single Post Tags
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_single_post_tags(){
 	?>
@@ -148,7 +167,7 @@ function whitedot_single_post_tags(){
 /**
  * WhiteDot Post Author
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_post_author(){
 	?>
@@ -184,7 +203,7 @@ function whitedot_post_comment(){
 /**
  * WhiteDot Blog List Thumbnail
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_blog_list_thumbnail(){
 
@@ -201,7 +220,7 @@ function whitedot_blog_list_thumbnail(){
 /**
  * Whitedot Blog List Meta
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_blog_list_meta(){
 
@@ -221,7 +240,7 @@ function whitedot_blog_list_meta(){
 /**
  * Whitedot Blog List Header
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_blog_list_header(){
 
@@ -240,7 +259,7 @@ function whitedot_blog_list_header(){
 /**
  * Whitedot Blog List Excerpt
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_blog_list_excerpt(){
 
@@ -268,7 +287,7 @@ function whitedot_blog_list_excerpt(){
 /**
  * Whitedot Blog Excerpt Main
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_blog_excerpt_main(){
 
@@ -283,7 +302,7 @@ function whitedot_blog_excerpt_main(){
 /**
  * Whitedot Blog Excerpt Main
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_blog_excerpt_readmore(){
 
@@ -305,7 +324,7 @@ function whitedot_blog_excerpt_readmore(){
 /**
  * WhiteDot Blog Home Pagination (With Page Number)
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_blog_home_number_pagination(){
 
@@ -322,7 +341,7 @@ function whitedot_blog_home_number_pagination(){
 /**
  * WhiteDot Blog Home Pagination (Only Next-Previous Sign)
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_blog_home_icon_pagination(){
 
@@ -344,7 +363,7 @@ function whitedot_blog_home_icon_pagination(){
 /**
  * WhiteDot Footer Credits
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 add_action('whitedot_footer_info_content','whitedot_footer_credits', 10);

@@ -9,7 +9,7 @@
 /**
  * WhiteDot Footer Branding
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_footer_branding(){
 
@@ -37,7 +37,7 @@ function whitedot_footer_branding(){
 /**
  * WhiteDot Footer Site Title
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_footer_site_title(){
 
@@ -50,7 +50,7 @@ function whitedot_footer_site_title(){
 /**
  * WhiteDot Footer Site Description
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_footer_site_description(){
 
@@ -64,7 +64,7 @@ function whitedot_footer_site_description(){
 /**
  * WhiteDot Footer Site Widgets
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_footer_widgets(){
 
@@ -85,7 +85,7 @@ function whitedot_footer_widgets(){
 /**
  * whitedot Footer Social Icons
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_footer_social_links(){
 
@@ -127,7 +127,7 @@ function whitedot_footer_social_links(){
 /**
  * WhiteDot Footer Info
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function whitedot_footer_info(){
 

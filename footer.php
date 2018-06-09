@@ -7,9 +7,16 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WhiteDot
- */
 
-?>
+
+			/**
+			 * whitedot_header_end hook.
+			 *
+			 * @since 1.0.2
+			 *
+			 */
+			do_action( 'whitedot_footer_start' ); ?>
+
 		</div><!-- .col-full -->
 	</div><!-- #content -->
 
@@ -17,7 +24,7 @@
 	/**
 	 * whitedot_before_footer hook.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	do_action( 'whitedot_before_footer' ); 
 
@@ -29,7 +36,7 @@
 		/**
 		 * whitedot_before_footer_content hook.
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 */
 		do_action( 'whitedot_before_footer_content' ); 
 
@@ -45,7 +52,7 @@
 		/**
 		 * whitedot_after_footer_content hook.
 		 *
-		 * @since 1.0
+		 * @since 1.0.0
 		 */
 		do_action( 'whitedot_after_footer_content' );
 		?>
@@ -56,7 +63,7 @@
 	/**
 	 * whitedot_after_footer hook.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	do_action( 'whitedot_after_footer' ); 
 

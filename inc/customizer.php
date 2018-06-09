@@ -1720,7 +1720,6 @@ if ( ! function_exists( 'whitedot_sanitize_integer' ) ) {
 /**
    * Sanitize integers that can use decimals.
    *
-   * @since 1.0
    */
 if ( ! function_exists( 'whitedot_sanitize_decimal_integer' ) ) {
   
