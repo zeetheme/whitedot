@@ -2,7 +2,7 @@
 
 
 **Contributors:** [zeetheme](https://profiles.wordpress.org/zeetheme)  
-**Tags:** one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-background, custom-colors, threaded-comments, theme-options
+**Tags:** one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-background, custom-colors, threaded-comments, theme-options 
 **Requires at least:** 4.6  
 **Tested up to:** 4.9  
 **Version:** 1.0.2  
