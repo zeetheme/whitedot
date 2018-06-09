@@ -57,8 +57,8 @@ Are you a developer? Then you are going to love WhiteDot. With tons of hooks, it
 ## Documentation and Support ##
 
 - For documentation and tutorials go to our [Documentation](https://zeetheme.com/whitedot-docs/).
-- If you have any more questions, visit our support on the [Plugin's Forum](https://wordpress.org/support/theme/whitedot).
-- For more information about features, FAQs and documentation, check out our website at [Elementor Page Builder](https://whitedot.zeetheme.com).
+- If you have any more questions, visit our support on the [Theme's Forum](https://wordpress.org/support/theme/whitedot).
+- For more information about features, FAQs and documentation, check out our website at [WhiteDot](https://whitedot.zeetheme.com).
 
 ## Frequently Asked Questions ##
 
@@ -90,5 +90,5 @@ If WooCommerce plugin is activated, 2 more widget areas will appear - "Cart Widg
 * Page Builder Integration
 
 ### 1.0.2 - June 8 2018 ###
-* Added more Page Templates
-* Page Builder Integration
+* Minor Improvement in design(CSS)
+* Added more hooks
