@@ -24,18 +24,6 @@ add_action( 'widgets_init', 'whitedot_footer_widgets_init' );
 //Woocommerce Product Filter Widget
 add_action( 'widgets_init', 'whitedot_woo_product_filter_widgets_init' );
 
-//Adding Body Class
-add_filter( 'body_class', 'whitedot_main_sidebar_body_class' );
-
-//Enqueue Font Awesome Icons
-add_action( 'wp_enqueue_scripts', 'whitedot_add_font_awesome_min' );
-
-//Enqueue Font Awesome Icons
-add_action( 'wp_enqueue_scripts', 'whitedot_lifterlms_custom' );
-
-//Enqueue Google Fonts
-add_action( 'wp_enqueue_scripts', 'whitedot_add_google_fonts' );
-
 //Enqueue Customizer Google Fonts
 add_action( 'wp_enqueue_scripts', 'whitedot_customizer_google_fonts' );
 
@@ -163,3 +151,6 @@ function whitedot_excerpt_length( $length ) {
 	return 35;
 }
 add_filter( 'excerpt_length', 'whitedot_excerpt_length', 999 );
+
+
+

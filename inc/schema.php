@@ -2,14 +2,14 @@
 
 //============== Schema Org Markup====================
 
-function whitedot_html_tag_schema()
+function whitedot_body_tag_schema()
 {
     $schema = 'http://schema.org/';
 
     // Is single post
     if(is_single())
     {
-        $type = "Article";
+        $type = "Blog";
     }
     // Contact form page ID
     else if( is_page(1) )

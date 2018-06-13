@@ -162,10 +162,38 @@ function whitedot_woo_product_filter_widgets_init() {
 }
 
 
+/**
+ * Adds a responsive embed wrapper around oEmbed content
+ *
+ * @param  string $html The oEmbed markup.
+ * @param  string $url The URL being embedded.
+ * @param  array  $attr An array of attributes.
+ *
+ * @return string       Updated embed markup.
+ */
+function responsive_oembed_wrapper( $html, $url, $attr ) {
 
-//Adding body class - no-sidebar/have-sidebar
-function whitedot_main_sidebar_body_class( $classes )
-{
-    $classes[] = is_active_sidebar('sidebar-1') ? 'has-sidebar' : 'no-sidebar';
-    return $classes;
+	$add_whitedot_oembed_wrapper = apply_filters( 'whitedot_responsive_oembed_wrapper_enable', true );
+
+	$allowed_providers = apply_filters(
+		'whitedot_allowed_fullwidth_oembed_providers', array(
+			'vimeo.com',
+			'youtube.com',
+			'youtu.be',
+			'wistia.com',
+			'wistia.net',
+			'dailymotion.com',
+		)
+	);
+
+
+	if ( $add_whitedot_oembed_wrapper ) {
+		$html = ( '' !== $html ) ? '<div class="embed-container">' . $html . '</div>' : '';
+	}
+
+
+	return $html;
 }
+
+add_filter( 'embed_oembed_html', 'responsive_oembed_wrapper' , 10, 3 );
+

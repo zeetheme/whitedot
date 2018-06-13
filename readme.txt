@@ -3,7 +3,7 @@
 Contributors: ZeeTheme
 Requires at least: 4.5
 Tested up to: 4.9.6
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-background, custom-colors, threaded-comments, theme-options
@@ -65,6 +65,18 @@ GNU General Public License for more details.
 * Added more Page Templates
 * Page Builder Integration
 
+= 1.0.2 - June 8 2018
+* Minor Improvement in design(CSS)
+* Added more hooks
+
+= 1.0.3 - June 13 2018
+* Combined all the CSS files( style.css, woocommerce.css and lifterlms-custom.css ) to one(style.css) for faster page loading.
+* Minified all the CSS files. Now all the CSS file are in css/ folder.
+* Combined these to js files to one for faster page loading - scripts.js and skip-link-focus-fix.js 
+* Improved Schema markup for better SEO. 
+* Added responsive container for oEmeb videos
+
+
 == Credits ==
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
@@ -73,5 +85,9 @@ GNU General Public License for more details.
 
 *Font Awesome icons, Copyright Dave Gandy, License: SIL Open Font License, version 1.1, Source: http://fontawesome.io/
 
-*WhiteDot Screenshot, (C)Copyright ZeeTheme, Source: https://zeetheme.com/wp-content/uploads/2018/05/screenshot.png
+*Screenshot image is the actual screenshot created using the WhiteDot WordPress Theme.
+Images that appear in the screenshot are licensed under CC0.
+
+	https://pixabay.com/en/business-content-fashion-leather-1853682/
+	https://pixabay.com/en/beverage-coffee-electronics-1838926/
 

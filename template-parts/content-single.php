@@ -19,7 +19,7 @@ do_action( 'whitedot_main_single_content_before' ); ?>
 
 <div class="wd-single-wrap">
 						
-	<article itemtype="http://schema.org/BlogPosting" itemprop="blogPost" id="post-<?php the_ID(); ?>" <?php post_class() ?>>
+	<article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class() ?>>
 
 		<?php
 		/**

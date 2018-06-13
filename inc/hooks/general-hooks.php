@@ -92,7 +92,7 @@ function whitedot_post_meta(){
 		</span>
 
 		<span class="single-category-meta">
-			<?php _e( 'Category :', 'whitedot' ); ?><span itemprop="category" itemscope="itemscope"><?php the_category(); ?></span>
+			<?php _e( 'Category :', 'whitedot' ); ?><span><?php the_category(); ?></span>
 		</span>	
 
 	</div>
@@ -142,7 +142,7 @@ function whitedot_post_content(){
 function whitedot_post_pagination(){
 
 	wp_link_pages( array(
-				'before'      => '<div itemtype = "http://schema.org/pagination" itemscope class="wd-single-pagenation"><span class="page-links-title">' . __( 'Pages:', 'whitedot' ) . '</span>',
+				'before'      => '<div itemtype = "http://schema.org/SiteNavigationElement/Pagination" itemscope class="wd-single-pagenation"><span class="page-links-title">' . __( 'Pages:', 'whitedot' ) . '</span>',
 				'after'       => '</div>',
 				'link_before' => '<span itemprop="url" class="page-num">',
 				'link_after'  => '</span>',
@@ -373,7 +373,7 @@ function whitedot_footer_credits(){
 	?>
 	<p class="footer-credit"><?php
 
-	printf( 'COPYRIGHT &copy <span itemprop="copyrightYear">%1$s</span> -  <a href="%2$s" target="_blank"><span itemprop="copyrightHolder" itemscope="itemscope">%3$s</span></a>',
+	printf( 'COPYRIGHT &copy %1$s - <a href="%2$s" target="_blank">%3$s</a>',
 			date( 'Y' ),
 			esc_url( 'https://zeetheme.com' ),
 			__( 'ZeeTheme', 'whitedot' )

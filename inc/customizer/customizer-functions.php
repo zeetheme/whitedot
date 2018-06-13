@@ -134,7 +134,9 @@ function whitedot_customizer_google_fonts() {
 
         wp_enqueue_style( 'whitedot-google-font-Dosis', 'https://fonts.googleapis.com/css?family=Dosis', false );
 
-    } 
+    }else{
+        wp_enqueue_style( 'whitedot_google_fonts', 'https://fonts.googleapis.com/css?family=Varela+Round', false ); 
+    }
 
 }
 

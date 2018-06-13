@@ -18,7 +18,7 @@
 do_action( 'whitedot_main_blog_home_before' ); ?>
 
 <div class = "wd-single-post <?php if ( has_post_thumbnail() ) { ?>has-thumb<?php }else{?>no-thumb<?php } ?>">
-	<article itemtype="http://schema.org/BlogPosting" itemprop="blogPost" id="post-<?php the_ID(); ?>" <?php post_class() ?>>
+	<article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class() ?>>
 
 		<?php
 		/**

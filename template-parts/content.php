@@ -9,7 +9,7 @@
 
 ?>
 
-<article itemtype="http://schema.org/BlogPosting" itemprop="blogPost" id="post-<?php the_ID(); ?>" <?php post_class() ?>>
+<article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class() ?>>
 	<div <?php if ( ! is_singular() ) : ?> class="wd-single-post" <?php endif ?>>
 		<?php if ( has_post_thumbnail() ): ?>
 				<div class='wd-single-featured-img'>
