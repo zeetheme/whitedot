@@ -91,3 +91,10 @@ If WooCommerce plugin is activated, 2 more widget areas will appear - "Cart Widg
 ### 1.0.2 - June 8 2018 ###
 * Minor Improvement in design(CSS)
 * Added more hooks
+
+### 1.0.3 - June 13 2018 ###
+* Combined all the CSS files( style.css, woocommerce.css and lifterlms-custom.css ) to one(style.css) for faster page loading.
+* Minified all the CSS files. Now all the CSS file are in css/ folder.
+* Combined these to js files to one for faster page loading - scripts.js and skip-link-focus-fix.js 
+* Improved Schema markup for better SEO. 
+* Added responsive container for oEmeb videos
