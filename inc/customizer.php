@@ -15,22 +15,32 @@ function whitedot_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	$wp_customize->get_setting('custom_logo')->transport =  'refresh';
-	$wp_customize->remove_control( 'header_textcolor' );
-	$wp_customize->remove_control('display_header_text');
+  
 	//Background
     $wp_customize->get_control( 'background_color' )->section   = 'background_image';
     $wp_customize->get_section( 'background_image' )->title     = __( 'Background', 'whitedot' );
 
-	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector'        => '.site-title a',
-			'render_callback' => 'whitedot_customize_partial_blogname',
-		) );
-		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-			'selector'        => '.site-description',
-			'render_callback' => 'whitedot_customize_partial_blogdescription',
-		) );
-	}
+  //Hide Tagline
+  $wp_customize->add_setting( 'whitedot_hide_tagline' , array(
+        'transport' => 'postMessage',
+        'default'    =>  '',
+        'sanitize_callback' => 'whitedot_sanitize_checkbox',
+        
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'whitedot_hide_tagline',
+            array(
+                'label'          => __( 'Hide Tagline', 'whitedot' ),
+                'section'        => 'title_tagline',
+                'type'           => 'checkbox',
+                
+            )
+        )
+    );
 
 	//Header Section
     
@@ -44,7 +54,7 @@ function whitedot_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'header_text_color' , array(
         'transport'  => 'postMessage',
         'default'    =>  '#666',
-        'sanitize_callback' => 'whitedot_sanitize_hex_color',
+        'sanitize_callback' => 'sanitize_hex_color',
         
         )
     );
@@ -94,7 +104,7 @@ function whitedot_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'whitedot_body_text_color' , array(
         'transport'  => 'postMessage',
         'default'    =>  '#333',
-        'sanitize_callback' => 'whitedot_sanitize_hex_color',
+        'sanitize_callback' => 'sanitize_hex_color',
         
         )
     );
@@ -112,7 +122,7 @@ function whitedot_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'whitedot_header_color' , array(
         'transport'  => 'postMessage',
         'default'    =>  '#777',
-        'sanitize_callback' => 'whitedot_sanitize_hex_color',
+        'sanitize_callback' => 'sanitize_hex_color',
         
         )
     );
@@ -130,7 +140,7 @@ function whitedot_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'whitedot_link_color' , array(
         'transport'  => 'refresh',
         'default'    =>  '#e5554e',
-        'sanitize_callback' => 'whitedot_sanitize_hex_color',
+        'sanitize_callback' => 'sanitize_hex_color',
         
         )
     );
@@ -148,7 +158,7 @@ function whitedot_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'whitedot_link_hover_color' , array(
         'transport'  => 'refresh',
         'default'    =>  '#c53f38',
-        'sanitize_callback' => 'whitedot_sanitize_hex_color',
+        'sanitize_callback' => 'sanitize_hex_color',
         
         )
     );
@@ -266,7 +276,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarright',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -340,7 +350,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarright',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -481,7 +491,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarright',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -616,7 +626,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarnone',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -741,7 +751,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarnone',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -817,7 +827,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarnone',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -853,7 +863,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarright',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -902,7 +912,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarnone',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -958,7 +968,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarnone',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -1014,7 +1024,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarnone',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -1087,7 +1097,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarright',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -1165,7 +1175,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarright',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -1243,7 +1253,7 @@ function whitedot_customize_register( $wp_customize ) {
        array(
           'default' => 'sidebarnone',
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_text_sanitization'
+          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
        )
     );
      
@@ -1309,223 +1319,6 @@ function whitedot_customize_register( $wp_customize ) {
             )
         )
     );
-    
-
-    //Social Settings
-    $wp_customize->add_section( 'whitedot_social_settings_section' , array(
-        'title'      => __('Social','whitedot'),
-        'priority'   => 90,
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_social_facebook', array(
-        'capability' => 'edit_theme_options',
-        'default'    =>  '',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        ) 
-    );
-
-    $wp_customize->add_control( 'whitedot_social_facebook', array(
-        'type' => 'checkbox',
-        'section' => 'whitedot_social_settings_section', 
-        'label'      => __( 'Show Facebook Icon', 'whitedot' ),
-        ) 
-    );
-
-    $wp_customize->add_setting(
-      'wd_facebook_url',
-      array(
-          'default'           => __( '#', "whitedot" ),
-          'transport'         => 'refresh',
-          'sanitize_callback' => 'sanitize_text'          
-      )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'wd_facebook_url',
-            array(
-                'label'          => __( 'Facebook url', 'whitedot' ),
-                'section'        => 'whitedot_social_settings_section',
-                'settings'       => 'wd_facebook_url',
-                'type'           => 'text'
-            )
-        )
-    );
-
-    $wp_customize->add_setting( 'whitedot_social_twitter', array(
-        'capability' => 'edit_theme_options',
-        'default'    =>  '',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        ) 
-    );
-
-    $wp_customize->add_control( 'whitedot_social_twitter', array(
-        'type' => 'checkbox',
-        'section' => 'whitedot_social_settings_section', 
-        'label'      => __( 'Show Twitter Icon', 'whitedot' ),
-        ) 
-    );
-
-    $wp_customize->add_setting(
-      'wd_twitter_url',
-      array(
-          'default'           => __( '#', "whitedot" ),
-          'transport'         => 'refresh',
-          'sanitize_callback' => 'sanitize_text'          
-      )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'wd_twitter_url',
-            array(
-                'label'          => __( 'Twitter url', 'whitedot' ),
-                'section'        => 'whitedot_social_settings_section',
-                'settings'       => 'wd_twitter_url',
-                'type'           => 'text'
-            )
-        )
-    );
-
-    $wp_customize->add_setting( 'whitedot_social_instagram', array(
-        'capability' => 'edit_theme_options',
-        'default'    =>  '',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        ) 
-    );
-
-    $wp_customize->add_control( 'whitedot_social_instagram', array(
-        'type' => 'checkbox',
-        'section' => 'whitedot_social_settings_section', 
-        'label'      => __( 'Show Instagram Icon', 'whitedot' ),
-        ) 
-    );
-
-    $wp_customize->add_setting(
-      'wd_instagram_url',
-      array(
-          'default'           => __( '#', "whitedot" ),
-          'transport'         => 'refresh',
-          'sanitize_callback' => 'sanitize_text'          
-      )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'wd_instagram_url',
-            array(
-                'label'          => __( 'Instagram url', 'whitedot' ),
-                'section'        => 'whitedot_social_settings_section',
-                'settings'       => 'wd_instagram_url',
-                'type'           => 'text'
-            )
-        )
-    );
-
-    $wp_customize->add_setting( 'whitedot_social_google', array(
-        'capability' => 'edit_theme_options',
-        'default'    =>  '',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        ) 
-    );
-
-    $wp_customize->add_control( 'whitedot_social_google', array(
-        'type' => 'checkbox',
-        'section' => 'whitedot_social_settings_section', 
-        'label'      => __( 'Show Google+ Icon', 'whitedot' ),
-        ) 
-    );
-
-    $wp_customize->add_setting(
-      'wd_google_url',
-      array(
-          'default'           => __( '#', "whitedot" ),
-          'transport'         => 'refresh',
-          'sanitize_callback' => 'sanitize_text'          
-      )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'wd_google_url',
-            array(
-                'label'          => __( 'Google+ url', 'whitedot' ),
-                'section'        => 'whitedot_social_settings_section',
-                'settings'       => 'wd_google_url',
-                'type'           => 'text'
-            )
-        )
-    );
-
-    $wp_customize->add_setting( 'whitedot_social_pintrest', array(
-        'capability' => 'edit_theme_options',
-        'default'    =>  '',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        ) 
-    );
-
-    $wp_customize->add_control( 'whitedot_social_pintrest', array(
-        'type' => 'checkbox',
-        'section' => 'whitedot_social_settings_section', 
-        'label'      => __( 'Show Pintrest Icon', 'whitedot' ),
-        ) 
-    );
-
-    $wp_customize->add_setting(
-      'wd_pintrest_url',
-      array(
-          'default'           => __( '#', "whitedot" ),
-          'transport'         => 'refresh',
-          'sanitize_callback' => 'sanitize_text'          
-      )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'wd_pintrest_url',
-            array(
-                'label'          => __( 'Pintrest url', 'whitedot' ),
-                'section'        => 'whitedot_social_settings_section',
-                'settings'       => 'wd_pintrest_url',
-                'type'           => 'text'
-            )
-        )
-    );
-
-    $wp_customize->add_setting( 'whitedot_social_youtube', array(
-        'capability' => 'edit_theme_options',
-        'default'    =>  '',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        ) 
-    );
-
-    $wp_customize->add_control( 'whitedot_social_youtube', array(
-        'type' => 'checkbox',
-        'section' => 'whitedot_social_settings_section', 
-        'label'      => __( 'Show Youtube Icon', 'whitedot' ),
-        ) 
-    );
-
-    $wp_customize->add_setting(
-      'wd_youtube_url',
-      array(
-          'default'           => __( '#', "whitedot" ),
-          'transport'         => 'refresh',
-          'sanitize_callback' => 'sanitize_text'          
-      )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'wd_youtube_url',
-            array(
-                'label'          => __( 'Youtube url', 'whitedot' ),
-                'section'        => 'whitedot_social_settings_section',
-                'settings'       => 'wd_youtube_url',
-                'type'           => 'text'
-            )
-        )
-    );
 
     //Course Catalog
     $wp_customize->add_section( 'whitedot_footer_settings_section' , array(
@@ -1559,6 +1352,7 @@ function whitedot_customize_register( $wp_customize ) {
     $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_footer_social_icons',
        array(
           'label' => esc_html__( 'Show Social Icons', 'whitedot' ),
+          'description' => esc_html__( "Don't forget to configure 'Social Icons' Menu in Menus Settings.", "whitedot" ),
           'section' => 'whitedot_footer_settings_section'
        )
     ) );
@@ -1600,13 +1394,13 @@ function sanitize_text( $text ) {
 }
 
 /**
- * Text sanitization
+ * Image Radio Button Options Text sanitization
  *
  * @param  string   Input to be sanitized (either a string containing a single string or multiple, separated by commas)
  * @return string   Sanitized input
  */
-if ( ! function_exists( 'whitedot_text_sanitization' ) ) {
-    function whitedot_text_sanitization( $input ) {
+if ( ! function_exists( 'whitedot_image_radio_options_sanitization' ) ) {
+    function whitedot_image_radio_options_sanitization( $input ) {
         if ( strpos( $input, ',' ) !== false) {
             $input = explode( ',', $input );
         }
@@ -1639,16 +1433,6 @@ function whitedot_sanitize_choice( $input, $setting ) {
   return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
 
-function whitedot_sanitize_hex_color( $color ) {
-    if ( '' === $color ) {
-        return '';
-    }
-    if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
-        return $color;
-    }
-
-    return '';
-}
 
 /**
  * Only allow values between a certain minimum & maxmium range

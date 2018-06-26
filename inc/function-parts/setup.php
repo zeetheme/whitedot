@@ -43,6 +43,11 @@ if ( ! function_exists( 'whitedot_setup' ) ) :
 			'menu-1' => esc_html__( 'Primary', 'whitedot' ),
 		) );
 
+		// Social Media Link Icons
+		register_nav_menus( array(
+			'social-icons' => esc_html__( 'Social Icons', 'whitedot' ),
+		) );
+
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -63,6 +68,7 @@ if ( ! function_exists( 'whitedot_setup' ) ) :
 			'height'                 => 200,
 			'flex-height'            => true,
 			'flex-width'             => true,
+			'header-text'			 => false
 		) ) );
 
 
@@ -91,6 +97,15 @@ if ( ! function_exists( 'whitedot_setup' ) ) :
 		add_theme_support( 'lifterlms-quizzes' );
 	}
 endif;
+
+
+/**
+ * Registers an editor stylesheet for the theme.
+ */
+function whitedot_add_editor_styles() {
+    add_editor_style('assets/css/editor-style.css');
+}
+add_action( 'after_setup_theme', 'whitedot_add_editor_styles' );
 
 
 /**
@@ -196,4 +211,87 @@ function responsive_oembed_wrapper( $html, $url, $attr ) {
 }
 
 add_filter( 'embed_oembed_html', 'responsive_oembed_wrapper' , 10, 3 );
+
+
+/**
+ * Adds Default Social Menu for the theme on activation.
+ *
+ * @since 1.0.5
+ *
+ */
+function social_nav_menu_item( $term_id, $title, $url ) {
+    
+    wp_update_nav_menu_item($term_id, 0, array(
+        'menu-item-title'   =>  $title,
+        'menu-item-url'     =>  $url, 
+        'menu-item-status'  =>  'publish'
+    ) );
+    
+}
+
+function whitedot_generate_site_nav_menu( $menu_name, $menu_items_array, $location_target ) {
+    
+    $menu_social = $menu_name;
+    wp_create_nav_menu( $menu_social );
+    $menu_social_obj = get_term_by( 'name', $menu_social, 'nav_menu' );
+    
+    foreach( $menu_items_array as $page_name => $page_location ){
+        social_nav_menu_item( $menu_social_obj->term_id, $page_name, $page_location );
+    }
+    
+    $menu_social_arr = get_theme_mod( 'nav_menu_locations' );
+    $menu_social_arr[$location_target] = $menu_social_obj->term_id;
+    set_theme_mod( 'nav_menu_locations', $menu_social_arr );
+        
+    update_option( 'menu_check', true );
+    
+}
+
+
+// Runs when user switches the theme
+function whitedot_after_switch_theme() {
+	
+	//Creating Default Social Navigation   
+    $run_menu_maker_once = get_option('menu_check');
+
+    if ( ! $run_menu_maker_once ){
+            
+        $social_icon_items = array(
+            'Facebook'		=>	'https://facebook.com',
+            'Twitter'		=>	'https://twitter.com',        
+            'Instagram'		=>	'https://instagram.com',
+            'Google +'		=>	'https://plus.gooogle.com',
+            'Pintrest'		=>	'https://pinterest.ca',
+            'Youtube'		=>	'https://youtube.com' 
+        );
+        whitedot_generate_site_nav_menu( 'Social Icons', $social_icon_items, 'social-icons' );
+        
+    }
+}
+add_action( 'after_switch_theme', 'whitedot_after_switch_theme');
+
+//Fallback Menu Page
+function fallback_menu_pages() {
+    
+    $list_pages = '';
+    $args = array(
+        'sort_order' => 'asc',
+        'sort_column' => 'post_title',
+        'hierarchical' => 1,
+        'child_of' => 0,
+        'parent' => -1,
+        'offset' => 0,
+        'number' => 5,
+        'post_type' => 'page',
+        'post_status' => 'publish'
+    );  
+    $pages = get_pages( $args );
+        
+    foreach( $pages as $key => $page ){
+        $list_pages .= '<li><a href = "' . get_permalink( $page->ID ) . '">' . $page->post_title . '</a></li>';
+    }
+    
+    echo esc_attr( $list_pages );
+    
+}
 

@@ -41,7 +41,7 @@ function whitedot_body_tag_schema()
         $type = 'WebPage';
     }
 
-    echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
+    echo 'itemscope="itemscope" itemtype="' . esc_attr( $schema ) . esc_attr( $type ). '"';
 }
 
 	

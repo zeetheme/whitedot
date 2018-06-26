@@ -172,104 +172,18 @@ if ( ! function_exists( 'whitedot_woocommerce_wrapper_after' ) ) {
 add_action( 'woocommerce_after_main_content', 'whitedot_woocommerce_wrapper_after' );
 
 /**
- * Sample implementation of the WooCommerce Mini Cart.
+ * Cart Fragments.
  *
- * You can add the WooCommerce Mini Cart to header.php like so ...
+ * Ensure cart contents update when products are added to the cart via AJAX.
  *
-	<?php
-		if ( function_exists( 'whitedot_woocommerce_header_cart' ) ) {
-			whitedot_woocommerce_header_cart();
-		}
-	?>
+ * @param array $fragments Fragments to refresh via AJAX.
+ * @return array Fragments to refresh via AJAX.
  */
-
-if ( ! function_exists( 'whitedot_woocommerce_cart_link_fragment' ) ) {
-	/**
-	 * Cart Fragments.
-	 *
-	 * Ensure cart contents update when products are added to the cart via AJAX.
-	 *
-	 * @param array $fragments Fragments to refresh via AJAX.
-	 * @return array Fragments to refresh via AJAX.
-	 */
-	function whitedot_woocommerce_cart_link_fragment( $fragments ) {
-		ob_start();
-		whitedot_woocommerce_cart_link();
-		$fragments['a.cart-contents'] = ob_get_clean();
-
-		return $fragments;
-	}
-}
-add_filter( 'woocommerce_add_to_cart_fragments', 'whitedot_woocommerce_cart_link_fragment' );
-
-if ( ! function_exists( 'whitedot_woocommerce_cart_link' ) ) {
-	/**
-	 * Cart Link.
-	 *
-	 * Displayed a link to the cart including the number of items present and the cart total.
-	 *
-	 * @return void
-	 */
-	function whitedot_woocommerce_cart_link() {
-		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'whitedot' ); ?>">
-			<?php
-			$item_count_text = sprintf(
-				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'whitedot' ),
-				WC()->cart->get_cart_contents_count()
-			);
-			?>
-			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
-		</a>
-		<?php
-	}
-}
-
-if ( ! function_exists( 'whitedot_woocommerce_header_cart' ) ) {
-	/**
-	 * Display Header Cart.
-	 *
-	 * @return void
-	 */
-	function whitedot_woocommerce_header_cart() {
-		if ( is_cart() ) {
-			$class = 'current-menu-item';
-		} else {
-			$class = '';
-		}
-		?>
-		<ul id="site-header-cart" class="site-header-cart">
-			<li class="<?php echo esc_attr( $class ); ?>">
-				<?php whitedot_woocommerce_cart_link(); ?>
-			</li>
-			<li>
-				<?php
-				$instance = array(
-					'title' => '',
-				);
-
-				the_widget( 'WC_Widget_Cart', $instance );
-				?>
-			</li>
-		</ul>
-		<?php
-	}
-}
-
-function whitedot_theme_update_mini_cart() {
-  echo wc_get_template( 'cart/mini-cart.php' );
-  die();
-}
-add_filter( 'wp_ajax_nopriv_mode_theme_update_mini_cart', 'whitedot_theme_update_mini_cart' );
-add_filter( 'wp_ajax_mode_theme_update_mini_cart', 'whitedot_theme_update_mini_cart' );
-
-
-//Header Cart AJAX 
 function whitedot_header_add_to_cart_fragment( $fragments ) {
+	$cart_count = WC()->cart->get_cart_contents_count();
 	ob_start();
 	?>
-		<a class="wdcart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'whitedot' ); ?>"><?php echo WC()->cart->get_cart_contents_count(); ?></a> 
+		<a class="wdcart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_html( __( 'View your shopping cart', 'whitedot' ) ); ?>"><?php echo esc_attr( $cart_count ); ?></a> 
 	<?php
 
 	$fragments['a.wdcart-contents'] = ob_get_clean();
@@ -281,7 +195,10 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'whitedot_header_add_to_cart_fr
 
 
 
-// define the woocommerce_pagination_args callback 
+/**
+ * define the woocommerce_pagination_args callback 
+ *
+ */
 function whitedot_woocommerce_pagination_args( $array ) { 
     
     

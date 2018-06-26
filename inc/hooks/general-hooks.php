@@ -85,14 +85,14 @@ function whitedot_post_meta(){
 	?>
 	<div class="single-excerpt-meta">
 		<span class="wd-author">
-			<?php _e( 'By', 'whitedot' ); ?> <span itemprop="author"><?php the_author_posts_link(); ?></span>
+			<?php esc_html_e( 'By', 'whitedot' ); ?> <span itemprop="author"><?php the_author_posts_link(); ?></span>
 		</span>
 		<span class="wd-date" >
 			<time itemprop="datePublished"><?php whitedot_posted_on(); ?></time>
 		</span>
 
 		<span class="single-category-meta">
-			<?php _e( 'Category :', 'whitedot' ); ?><span><?php the_category(); ?></span>
+			<?php esc_html_e( 'Category :', 'whitedot' ); ?><span><?php the_category(); ?></span>
 		</span>	
 
 	</div>
@@ -177,13 +177,10 @@ function whitedot_post_author(){
 		</div>
 		<div class="wd-author-info">
 			<div class="wd-author-name">
-				<?php _e( 'Author : ', 'whitedot' ); ?><span itemprop="name"><?php the_author_posts_link(); ?></span>
+				<?php esc_html_e( 'Author : ', 'whitedot' ); ?><span itemprop="name"><?php the_author_posts_link(); ?></span>
 			</div>
 			<div class="wd-author-description" itemprop="description">
 				<?php the_author_meta('user_description'); ?> 
-			</div>
-			<div class="wd-author-email">
-				<?php _e( 'Email : ', 'whitedot' ); ?><span itemprop="email" ><?php the_author_meta('user_email'); ?></span> 
 			</div>
 		</div>
 	</div>
@@ -191,12 +188,7 @@ function whitedot_post_author(){
 }
 
 function whitedot_post_comment(){
-
-		if ( comments_open() ) : ?>
-			<div itemtype = "http://schema.org/comment" itemscope class="wd-single-post-comment wd-comment">
-				<?php comments_template(); ?>
-			</div><!--.wd-single-post-comment-->
-		<?php endif; 
+	comments_template();
 }
 
 
@@ -309,7 +301,7 @@ function whitedot_blog_excerpt_readmore(){
 	?>
 	<div class="wd-more-link-wrapper">
 		<a itemprop="url" class="more-link" href="<?php the_permalink(); ?>">
-			<?php echo __( 'Read the Post', 'whitedot' ) ?>
+			<?php echo esc_html( __( 'Read the Post', 'whitedot' ) ); ?>
 			<span class="screen-reader-text">
 				<?php the_title(); ?>
 			</span>
@@ -373,10 +365,11 @@ function whitedot_footer_credits(){
 	?>
 	<p class="footer-credit"><?php
 
-	printf( 'COPYRIGHT &copy %1$s - <a href="%2$s" target="_blank">%3$s</a>',
-			date( 'Y' ),
+	printf( '%1$s &copy %2$s - <a href="%3$s" target="_blank">%4$s</a>',
+			esc_html_e( 'COPYRIGHT', 'whitedot' ),
+			esc_html( date( 'Y' ) ),
 			esc_url( 'https://zeetheme.com' ),
-			__( 'ZeeTheme', 'whitedot' )
+			esc_html( __( 'ZeeTheme', 'whitedot' ) )
 		);
 
 	?>

@@ -16,6 +16,9 @@ function whitedot_show_blog_grid_wrap()
         if ( !is_front_page() && is_home() ) {
     		add_action('whitedot_home_loop_before','whitedot_blog_grid_wrap_start', 10);
     		add_action('whitedot_blog_home_pagination','whitedot_blog_grid_wrap_end', 5);
+        } elseif ( is_front_page() && is_home() ) {
+            add_action('whitedot_home_loop_before','whitedot_blog_grid_wrap_start', 10);
+            add_action('whitedot_blog_home_pagination','whitedot_blog_grid_wrap_end', 5);
         }
 	}
 }
@@ -27,8 +30,10 @@ function whitedot_show_blog_grid_wrap()
  */
 function whitedot_blog_grid_wrap_start(){
 
+    $gridColumn = get_theme_mod('whitedot_blog_home_grid_culmn', 2 );
+
 	?>
-		<div class="wd-blog-grid col-<?php echo get_theme_mod('whitedot_blog_home_grid_culmn', 2 ); ?>">
+		<div class="wd-blog-grid col-<?php echo esc_attr( $gridColumn ) ?>">
 	<?php
 
 }
@@ -168,7 +173,7 @@ function whitedot_display_footer_social_icons()
 {
     if ( 1 == get_theme_mod( 'whitedot_show_footer_social_icons', 0 ) ) { 
         
-        add_action('whitedot_footer_branding_content','whitedot_footer_social_links', 30);
+        add_action('whitedot_footer_branding_content','whitedot_social_links', 30);
     }
 }
 

@@ -98,3 +98,12 @@ If WooCommerce plugin is activated, 2 more widget areas will appear - "Cart Widg
 * Combined these to js files to one for faster page loading - scripts.js and skip-link-focus-fix.js 
 * Improved Schema markup for better SEO. 
 * Added responsive container for oEmeb videos
+
+### 1.0.4 - June 18 2018 ###
+* Minor Improvements
+
+### 1.0.5 - June 26 2018 ###
+* Inprovement in Comments Form
+* Improvement in Theme Customizer
+* Removed the Social Icons options from Customizer and added Social Icons Navigation Menu. 
+* A Navigation Menu named "Social Icon" Menu will automatically be created when theme is activated.

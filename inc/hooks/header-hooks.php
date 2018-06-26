@@ -92,7 +92,7 @@ function whitedot_header_hamburger(){
 ?>
 
 <button class="wd-hamburger wd-hamburger--htx" onclick="wd_menu_toggle()">
-	<span><?php _e( 'toggle menu', 'whitedot' ); ?></span>
+	<span><?php esc_html_e( 'toggle menu', 'whitedot' ); ?></span>
 </button>
 
 <?php
@@ -195,15 +195,17 @@ function whitedot_header_navigation(){
  */
 function whitedot_header_cart(){
 
+	$cart_count = WC()->cart->get_cart_contents_count();
+
 	if ( class_exists( 'WooCommerce' ) ) {?>
 		<span class="wd-cart">
 			<div class="wd-cart-container"> 
-				<a href="<?php echo wc_get_cart_url(); ?>">
+				<a href="<?php echo esc_url( wc_get_cart_url() ); ?>">
 					<i class="fa fa-shopping-cart pkcart-icon" aria-hidden="true"></i>
 				</a>
-				<a class="wdcart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'whitedot' ); ?>">
+				<a class="wdcart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_html( __( 'View your shopping cart', 'whitedot' ) ); ?>">
 
-					<?php echo WC()->cart->get_cart_contents_count(); ?>
+					<?php echo esc_attr( $cart_count ); ?>
 					
 				</a> 
 			</div><!--.wd-cart-container -->
@@ -222,15 +224,17 @@ function whitedot_header_cart(){
  */
 function whitedot_mob_header_cart(){
 
+	$cart_count = WC()->cart->get_cart_contents_count();
+
 	if ( class_exists( 'WooCommerce' ) ) {?>
 			<span class="wd-cart-mob">
 				<div class="wd-cart-container-mob"> 
-				<a href="<?php echo wc_get_cart_url(); ?>">
+				<a href="<?php echo esc_url( wc_get_cart_url() ); ?>">
 					<i class="fa fa-shopping-cart pkcart-icon" aria-hidden="true"></i>
 				</a>
-				<a class="wdcart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'whitedot' ); ?>">
+				<a class="wdcart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_html( __( 'View your shopping cart', 'whitedot' ) ); ?>">
 
-					<?php echo WC()->cart->get_cart_contents_count(); ?>
+					<?php echo esc_attr( $cart_count ); ?>
 					
 				</a> 
 			</div><!--wd-cart-container-mob -->

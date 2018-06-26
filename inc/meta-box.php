@@ -58,7 +58,7 @@ function whitedot_render_metabox( $post ) {
 	<input type="hidden" name="whitedot-hide-title-checkbox" value="0"/>
 	<input type="checkbox" name="whitedot-hide-title-checkbox" id="whitedot-hide-title-checkbox"
 	       value="1" <?php checked( $curr_value, '1' ); ?> />
-	<label for="whitedot-hide-title-checkbox"><?php _e( 'Hide the title for this item : ', 'whitedot' ); ?></label>
+	<label for="whitedot-hide-title-checkbox"><?php esc_html( __( 'Hide the title for this item : ', 'whitedot' ) ); ?></label>
 	<?php
 }
 

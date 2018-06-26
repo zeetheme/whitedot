@@ -83,42 +83,33 @@ function whitedot_footer_widgets(){
 }
 
 /**
- * whitedot Footer Social Icons
+ * whitedot Social Icons
  *
- * @since 1.0.0
+ * @since 1.0.5
  */
-function whitedot_footer_social_links(){
-
+function whitedot_social_links(){
 ?>
+	<div class="wd-social-icons">
 
+		<?php
+		if ( has_nav_menu( 'social-icons' ) ) {
 
-	<div class="wd-footer-social-icons">
+			wp_nav_menu(
+				array(
+					'theme_location'  => 'social-icons',
+					'container'       => 'nav',
+					'container_id'    => 'menu-social-icons',
+					'container_class' => 'menu',
+					'menu_id'         => 'menu-social-media-items',
+					'menu_class'      => 'menu-items',
+					'depth'           => 1,
+					'fallback_cb'     => '',
+				)
+			);
+		}
+		?>
 
-		<?php if ( true == get_theme_mod( 'whitedot_social_facebook', false ) ) { ?> 
-			<a itemprop="sameAs" href="<?php echo get_theme_mod('wd_facebook_url'); ?>" class="wd-footer-social-icon" target="blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-		<?php } ?> 
-
-		<?php if ( true == get_theme_mod( 'whitedot_social_twitter', false ) ) { ?> 
-			<a itemprop="sameAs" href="<?php echo get_theme_mod('wd_twitter_url'); ?>" class="wd-footer-social-icon" target="blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-		<?php } ?> 
-
-		<?php if ( true == get_theme_mod( 'whitedot_social_instagram', false ) ) { ?> 
-			<a itemprop="sameAs" href="<?php echo get_theme_mod('wd_instagram_url'); ?>" class="wd-footer-social-icon" target="blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-		<?php } ?> 
-
-		<?php if ( true == get_theme_mod( 'whitedot_social_google', false ) ) { ?> 
-			<a itemprop="sameAs" href="<?php echo get_theme_mod('wd_google_url'); ?>" class="wd-footer-social-icon" target="blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-		<?php } ?> 
-
-		<?php if ( true == get_theme_mod( 'whitedot_social_pintrest', false ) ) { ?> 
-			<a itemprop="sameAs" href="<?php echo get_theme_mod('wd_pintrest_url'); ?>" class="wd-footer-social-icon" target="blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-		<?php } ?> 
-
-		<?php if ( true == get_theme_mod( 'whitedot_social_youtube', false ) ) { ?> 
-			<a itemprop="sameAs" href="<?php echo get_theme_mod('wd_youtube_url'); ?>" class="wd-footer-social-icon" target="blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-		<?php } ?> 
-
-	</div><!--.wd-footer-social-icons -->
+	</div><!--.wd-social-icons -->
 
 <?php
 

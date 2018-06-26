@@ -3,7 +3,7 @@
 Contributors: ZeeTheme
 Requires at least: 4.5
 Tested up to: 4.9.6
-Version: 1.0.3
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-background, custom-colors, threaded-comments, theme-options
@@ -76,6 +76,16 @@ GNU General Public License for more details.
 * Improved Schema markup for better SEO. 
 * Added responsive container for oEmeb videos
 
+= 1.0.4 - June 18 2018
+* Minor Improvements
+
+= 1.0.5 - June 26 2018
+* Inprovement in Comments Form
+* Improvement in Theme Customizer
+* Removed the Social Icons options from Customizer and added Social Icons Navigation Menu. 
+* A Navigation Menu named "Social Icon" Menu will automatically be created when theme is activated.
+
+
 
 == Credits ==
 
@@ -84,6 +94,11 @@ GNU General Public License for more details.
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 
 *Font Awesome icons, Copyright Dave Gandy, License: SIL Open Font License, version 1.1, Source: http://fontawesome.io/
+
+*Slider Custom Control and Image Check Box Custom Control Scripts (js/customizer-custom.js)
+ * author Anthony Hortin <http://maddisondesigns.com>
+ * license http://www.gnu.org/licenses/gpl-2.0.html
+ * link https://github.com/maddisondesigns
 
 *Screenshot image is the actual screenshot created using the WhiteDot WordPress Theme.
 Images that appear in the screenshot are licensed under CC0.

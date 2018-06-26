@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/whitedot\n"
 "POT-Creation-Date: 2018-05-18 19:25+0000\n"
 "MIME-Version: 1.0\n"
-"PO-Revision-Date: 2018-05-18 19:25+0000\n"
+"PO-Revision-Date: 2018-06-25 15:43+0000\n"
 "Last-Translator: Vishal Ranjan <admin@zeetheme.com>\n"
 "Language-Team: ZeeTheme\n"
 "MIME-Version: 1.0\n"
@@ -14,78 +14,66 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: inc/customizer.php:1337 inc/customizer.php:1372 inc/customizer.php:1407
-#: inc/customizer.php:1442 inc/customizer.php:1477 inc/customizer.php:1512
+#: inc/customizer.php:1347 inc/customizer.php:1382 inc/customizer.php:1417
+#: inc/customizer.php:1452 inc/customizer.php:1487 inc/customizer.php:1522
 msgid "#"
 msgstr ""
-
-#. number of items in the mini cart.
-#: inc/woocommerce.php:243
-#, php-format
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
 
 #. used between list items, there is a space after the comma
 #: inc/template-tags.php:62
 msgid ", "
 msgstr ""
 
-#: inc/hooks/general-hooks.php:161
+#: inc/hooks/general-hooks.php:180
 msgid "Author : "
 msgstr ""
 
-#: inc/customizer.php:22
+#: inc/customizer.php:21
 msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:334
+#: inc/customizer.php:344
 msgid "Blog Home/Archive"
 msgstr ""
 
-#: inc/customizer.php:380
+#: inc/customizer.php:390
 msgid "Blog Layout"
 msgstr ""
 
-#: inc/customizer.php:327
+#: inc/customizer.php:337
 msgid "Blog Settings"
 msgstr ""
 
-#: inc/customizer.php:226
+#: inc/customizer.php:236
 msgid "Body Font Size"
 msgstr ""
 
-#: inc/hooks/general-hooks.php:69
+#: inc/hooks/general-hooks.php:88
 msgid "By"
 msgstr ""
 
-#: inc/customizer.php:811
+#: inc/customizer.php:821
 msgid "Cart"
 msgstr ""
 
-#: inc/function-parts/setup.php:154
-msgid "Cart Widget"
-msgstr ""
-
-#: inc/hooks/general-hooks.php:76
+#: inc/hooks/general-hooks.php:95
 msgid "Category :"
 msgstr ""
 
-#: inc/customizer.php:847
+#: inc/customizer.php:857
 msgid "Checkout"
 msgstr ""
 
-#: inc/customizer.php:90
+#: inc/customizer.php:100
 msgid "Colors"
 msgstr ""
 
-#: comments.php:66
+#: comments.php:65
 msgid "Comments are closed."
 msgstr ""
 
 #. 1: comment count number, 2: title.
-#: comments.php:41
+#: comments.php:40
 #, php-format
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
@@ -93,23 +81,27 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/customizer.php:940
+#: inc/hooks/general-hooks.php:369
+msgid "COPYRIGHT"
+msgstr ""
+
+#: inc/customizer.php:950
 msgid "Course Catalog Columns"
 msgstr ""
 
-#: inc/customizer.php:896
+#: inc/customizer.php:906
 msgid "Course Catelog"
 msgstr ""
 
-#: inc/customizer.php:1008
+#: inc/customizer.php:1018
 msgid "Dashboard"
 msgstr ""
 
-#: inc/function-parts/setup.php:120
+#: inc/function-parts/setup.php:135
 msgid "Displays on the side of pages and posts with a sidebar."
 msgstr ""
 
-#: inc/function-parts/setup.php:138
+#: inc/function-parts/setup.php:153
 msgid "Displays widgets in the footer of pages and posts."
 msgstr ""
 
@@ -117,10 +109,6 @@ msgstr ""
 #: inc/template-tags.php:99
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
-
-#: inc/hooks/general-hooks.php:167
-msgid "Email : "
 msgstr ""
 
 #. Description of the theme
@@ -139,52 +127,60 @@ msgid ""
 "and reach amazing results."
 msgstr ""
 
-#: inc/customizer.php:1347
+#: inc/customizer.php:1357
 msgid "Facebook url"
 msgstr ""
 
-#: inc/customizer.php:185
+#: inc/customizer.php:195
 msgid "Font"
 msgstr ""
 
-#: inc/customizer.php:1532
+#: inc/customizer.php:1542
 msgid "Footer Settings"
 msgstr ""
 
-#: inc/function-parts/setup.php:136
+#: inc/function-parts/setup.php:151
 msgid "Footer Widgets"
 msgstr ""
 
-#: inc/customizer.php:588
+#. Name of the template
+msgid "Full Width (Page Builder)"
+msgstr ""
+
+#: inc/customizer.php:598
 msgid "General"
 msgstr ""
 
-#: inc/customizer.php:1452
+#: inc/customizer.php:1462
 msgid "Google+ url"
 msgstr ""
 
-#: inc/customizer.php:402
+#: inc/customizer.php:412
 msgid "Grid Columns"
 msgstr ""
 
-#: inc/customizer.php:125
+#: inc/customizer.php:135
 msgid "Header Color"
 msgstr ""
 
-#: inc/customizer.php:603
+#: inc/customizer.php:613
 msgid "Header Mini Cart"
 msgstr ""
 
-#: inc/customizer.php:38
+#: inc/customizer.php:48
 msgid "Header Settings"
 msgstr ""
 
-#: inc/customizer.php:75
+#: inc/customizer.php:85
 msgid "Header Styles"
 msgstr ""
 
-#: inc/customizer.php:57
+#: inc/customizer.php:67
 msgid "Header Text Color"
+msgstr ""
+
+#: inc/customizer.php:37
+msgid "Hide Tagline"
 msgstr ""
 
 #: inc/meta-box.php:61
@@ -199,7 +195,7 @@ msgstr ""
 msgid "https://zeetheme.com/about"
 msgstr ""
 
-#: inc/customizer.php:1417
+#: inc/customizer.php:1427
 msgid "Instagram url"
 msgstr ""
 
@@ -220,32 +216,36 @@ msgstr ""
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: inc/customizer.php:727
+#: inc/customizer.php:737
 msgid "Left"
 msgstr ""
 
 #. Name of the template
-#: inc/customizer.php:280 inc/customizer.php:354 inc/customizer.php:495
-#: inc/customizer.php:630 inc/customizer.php:755 inc/customizer.php:831
-#: inc/customizer.php:867 inc/customizer.php:916 inc/customizer.php:972
-#: inc/customizer.php:1028 inc/customizer.php:1101 inc/customizer.php:1179
-#: inc/customizer.php:1257
+#: inc/customizer.php:290 inc/customizer.php:364 inc/customizer.php:505
+#: inc/customizer.php:640 inc/customizer.php:765 inc/customizer.php:841
+#: inc/customizer.php:877 inc/customizer.php:926 inc/customizer.php:982
+#: inc/customizer.php:1038 inc/customizer.php:1111 inc/customizer.php:1189
+#: inc/customizer.php:1267
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/customizer.php:889
+#. Name of the template
+msgid "Left Sidebar Boxed"
+msgstr ""
+
+#: inc/customizer.php:899
 msgid "LifterLMS Settings"
 msgstr ""
 
-#: inc/customizer.php:246
+#: inc/customizer.php:256
 msgid "Line Height"
 msgstr ""
 
-#: inc/customizer.php:143
+#: inc/customizer.php:153
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer.php:161
+#: inc/customizer.php:171
 msgid "Link Hover Color"
 msgstr ""
 
@@ -255,25 +255,29 @@ msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
-#: inc/customizer.php:996
+#: inc/customizer.php:1006
 msgid "Membership Catalog Columns"
 msgstr ""
 
-#: inc/customizer.php:952
+#: inc/customizer.php:962
 msgid "Membership Catelog"
 msgstr ""
 
-#: inc/customizer.php:467
+#: inc/customizer.php:477
 msgid "Next-Previous"
 msgstr ""
 
 #. Name of the template
-#: inc/customizer.php:284 inc/customizer.php:358 inc/customizer.php:499
-#: inc/customizer.php:634 inc/customizer.php:759 inc/customizer.php:835
-#: inc/customizer.php:871 inc/customizer.php:920 inc/customizer.php:976
-#: inc/customizer.php:1032 inc/customizer.php:1105 inc/customizer.php:1183
-#: inc/customizer.php:1261
+#: inc/customizer.php:294 inc/customizer.php:368 inc/customizer.php:509
+#: inc/customizer.php:644 inc/customizer.php:769 inc/customizer.php:845
+#: inc/customizer.php:881 inc/customizer.php:930 inc/customizer.php:986
+#: inc/customizer.php:1042 inc/customizer.php:1115 inc/customizer.php:1193
+#: inc/customizer.php:1271
 msgid "No Sidebar"
+msgstr ""
+
+#. Name of the template
+msgid "No Sidebar Boxed"
 msgstr ""
 
 #: template-parts/content-none.php:14
@@ -281,7 +285,7 @@ msgid "Nothing Found"
 msgstr ""
 
 #. 1: title.
-#: comments.php:35
+#: comments.php:34
 #, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
@@ -290,28 +294,28 @@ msgstr ""
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: template-parts/content.php:52 inc/hooks/general-hooks.php:130
-#: inc/hooks/general-hooks.php:316
+#: template-parts/content.php:52 inc/hooks/general-hooks.php:149
+#: inc/hooks/general-hooks.php:327
 msgid "Page"
 msgstr ""
 
-#: inc/customizer.php:468
+#: inc/customizer.php:478
 msgid "Page Numbers"
 msgstr ""
 
-#: inc/customizer.php:275
+#: inc/customizer.php:285
 msgid "Page Sidebar Layout"
 msgstr ""
 
-#: inc/customizer.php:464
+#: inc/customizer.php:474
 msgid "Pageination Style"
 msgstr ""
 
-#: template-parts/content.php:48 inc/hooks/general-hooks.php:126
+#: template-parts/content.php:48 inc/hooks/general-hooks.php:145
 msgid "Pages:"
 msgstr ""
 
-#: inc/customizer.php:1487
+#: inc/customizer.php:1497
 msgid "Pintrest url"
 msgstr ""
 
@@ -339,19 +343,19 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: inc/customizer.php:654
+#: inc/customizer.php:664
 msgid "Product Columns"
 msgstr ""
 
-#: inc/function-parts/setup.php:171
+#: inc/function-parts/setup.php:169
 msgid "Product Filter Widgets"
 msgstr ""
 
-#: inc/customizer.php:674
+#: inc/customizer.php:684
 msgid "Product Per Page "
 msgstr ""
 
-#: inc/hooks/general-hooks.php:293
+#: inc/hooks/general-hooks.php:304
 msgid "Read the Post"
 msgstr ""
 
@@ -362,29 +366,33 @@ msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: inc/customizer.php:779
+#: inc/customizer.php:789
 msgid "Related Product Columns"
 msgstr ""
 
-#: inc/customizer.php:799
+#: inc/customizer.php:809
 msgid "Related Product Per Page"
 msgstr ""
 
-#: inc/customizer.php:1070
+#: inc/customizer.php:1080
 msgid "Remove Duplicate Titles"
 msgstr ""
 
-#: inc/customizer.php:728
+#: inc/customizer.php:738
 msgid "Right"
 msgstr ""
 
 #. Name of the template
-#: inc/customizer.php:288 inc/customizer.php:362 inc/customizer.php:503
-#: inc/customizer.php:638 inc/customizer.php:763 inc/customizer.php:839
-#: inc/customizer.php:875 inc/customizer.php:924 inc/customizer.php:980
-#: inc/customizer.php:1036 inc/customizer.php:1109 inc/customizer.php:1187
-#: inc/customizer.php:1265
+#: inc/customizer.php:298 inc/customizer.php:372 inc/customizer.php:513
+#: inc/customizer.php:648 inc/customizer.php:773 inc/customizer.php:849
+#: inc/customizer.php:885 inc/customizer.php:934 inc/customizer.php:990
+#: inc/customizer.php:1046 inc/customizer.php:1119 inc/customizer.php:1197
+#: inc/customizer.php:1275
 msgid "Right Sidebar"
+msgstr ""
+
+#. Name of the template
+msgid "Right Sidebar Boxed"
 msgstr ""
 
 #. %s: search query.
@@ -393,123 +401,127 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/customizer.php:610
+#: inc/customizer.php:620
 msgid "Shop"
 msgstr ""
 
-#: inc/customizer.php:724
+#: inc/customizer.php:734
 msgid "Shop Filter Layout"
 msgstr ""
 
-#: inc/customizer.php:694
+#: inc/customizer.php:704
 msgid "Show Add to Cart Button"
 msgstr ""
 
-#: inc/customizer.php:1330
+#: inc/customizer.php:1340
 msgid "Show Facebook Icon"
 msgstr ""
 
-#: inc/customizer.php:1546
+#: inc/customizer.php:1556
 msgid "Show Footer Branding"
 msgstr ""
 
-#: inc/customizer.php:1435
+#: inc/customizer.php:1445
 msgid "Show Google+ Icon"
 msgstr ""
 
-#: inc/customizer.php:1400
+#: inc/customizer.php:1410
 msgid "Show Instagram Icon"
 msgstr ""
 
-#: inc/customizer.php:446 inc/customizer.php:543
+#: inc/customizer.php:456 inc/customizer.php:553
 msgid "Show Meta Author"
 msgstr ""
 
-#: inc/customizer.php:1128 inc/customizer.php:1206 inc/customizer.php:1284
+#: inc/customizer.php:1138 inc/customizer.php:1216 inc/customizer.php:1294
 msgid "Show Meta Author(Below Title)"
 msgstr ""
 
-#: inc/customizer.php:564
+#: inc/customizer.php:574
 msgid "Show Meta Category"
 msgstr ""
 
-#: inc/customizer.php:425 inc/customizer.php:522
+#: inc/customizer.php:435 inc/customizer.php:532
 msgid "Show Meta Date"
 msgstr ""
 
-#: inc/customizer.php:1149 inc/customizer.php:1227 inc/customizer.php:1305
+#: inc/customizer.php:1159 inc/customizer.php:1237 inc/customizer.php:1315
 msgid "Show Meta Date(Below Title)"
 msgstr ""
 
-#: inc/customizer.php:1052
+#: inc/customizer.php:1062
 msgid "Show Navigation Icons"
 msgstr ""
 
-#: inc/customizer.php:1470
+#: inc/customizer.php:1480
 msgid "Show Pintrest Icon"
 msgstr ""
 
-#: inc/customizer.php:709
+#: inc/customizer.php:719
 msgid "Show Product Filter"
 msgstr ""
 
-#: inc/customizer.php:1561
+#: inc/customizer.php:1571
 msgid "Show Social Icons"
 msgstr ""
 
-#: inc/customizer.php:1365
+#: inc/customizer.php:1375
 msgid "Show Twitter Icon"
 msgstr ""
 
-#: inc/customizer.php:1505
+#: inc/customizer.php:1515
 msgid "Show Youtube Icon"
 msgstr ""
 
-#: inc/function-parts/setup.php:118
+#: inc/function-parts/setup.php:133
 msgid "Sidebar"
 msgstr ""
 
-#: inc/customizer.php:349 inc/customizer.php:490 inc/customizer.php:625
-#: inc/customizer.php:750 inc/customizer.php:826 inc/customizer.php:862
-#: inc/customizer.php:911 inc/customizer.php:967 inc/customizer.php:1023
-#: inc/customizer.php:1096 inc/customizer.php:1174 inc/customizer.php:1252
+#: inc/customizer.php:359 inc/customizer.php:500 inc/customizer.php:635
+#: inc/customizer.php:760 inc/customizer.php:836 inc/customizer.php:872
+#: inc/customizer.php:921 inc/customizer.php:977 inc/customizer.php:1033
+#: inc/customizer.php:1106 inc/customizer.php:1184 inc/customizer.php:1262
 msgid "Sidebar Layout"
 msgstr ""
 
-#: inc/customizer.php:261
+#: inc/customizer.php:271
 msgid "Sidebar Settings"
 msgstr ""
 
-#: inc/customizer.php:306
+#: inc/customizer.php:316
 msgid "Sidebar Styles"
 msgstr ""
 
-#: inc/customizer.php:1081
+#: inc/customizer.php:1091
 msgid "Single Course"
 msgstr ""
 
-#: inc/customizer.php:1159
+#: inc/customizer.php:1169
 msgid "Single Lesson"
 msgstr ""
 
-#: inc/customizer.php:1237
+#: inc/customizer.php:1247
 msgid "Single Membership"
 msgstr ""
 
-#: inc/customizer.php:475
+#: inc/customizer.php:485
 msgid "Single Post"
 msgstr ""
 
-#: inc/customizer.php:735
+#: inc/customizer.php:745
 msgid "Single Product"
 msgstr ""
 
-#: header.php:25
+#: header.php:25 template-full-width.php:24
 msgid "Skip to content"
 msgstr ""
 
-#: inc/customizer.php:1316
+#: inc/customizer.php:1326
 msgid "Social"
+msgstr ""
+
+#: inc/function-parts/setup.php:48
+msgid "Social Icons"
 msgstr ""
 
 #: template-parts/content-none.php:37
@@ -524,17 +536,11 @@ msgstr ""
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/customizer.php:107
+#: inc/customizer.php:117
 msgid "Text Color"
 msgstr ""
 
-#: inc/function-parts/setup.php:156
-msgid ""
-"This widget displays on cart icon hover. You can add the \"Cart\" Widget "
-"here."
-msgstr ""
-
-#: inc/function-parts/setup.php:173
+#: inc/function-parts/setup.php:171
 msgid ""
 "This widget displays Product Filter on your shop page. You can add "
 "Woocommerce product filter widgets here."
@@ -544,16 +550,16 @@ msgstr ""
 msgid "toggle menu"
 msgstr ""
 
-#: inc/customizer.php:1382
+#: inc/customizer.php:1392
 msgid "Twitter url"
 msgstr ""
 
-#: inc/customizer.php:169
+#: inc/customizer.php:179
 msgid "Typography"
 msgstr ""
 
-#: inc/woocommerce.php:239 inc/woocommerce.php:296
-#: inc/hooks/header-hooks.php:204 inc/hooks/header-hooks.php:235
+#: inc/woocommerce.php:186 inc/hooks/header-hooks.php:206
+#: inc/hooks/header-hooks.php:235
 msgid "View your shopping cart"
 msgstr ""
 
@@ -561,15 +567,15 @@ msgstr ""
 msgid "WhiteDot"
 msgstr ""
 
-#: inc/customizer.php:581
+#: inc/customizer.php:591
 msgid "WooCommerce Settings"
 msgstr ""
 
-#: inc/customizer.php:1522
+#: inc/customizer.php:1532
 msgid "Youtube url"
 msgstr ""
 
 #. Author of the theme
-#: inc/hooks/general-hooks.php:360
+#: inc/hooks/general-hooks.php:372
 msgid "ZeeTheme"
 msgstr ""

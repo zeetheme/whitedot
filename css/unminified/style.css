@@ -1,36 +1,4 @@
-/*!
-Theme Name: WhiteDot
-Theme URI: http://zeetheme.com/whitedot
-Author: ZeeTheme
-Author URI: https://zeetheme.com/about
-Description: Experience the perfection in design of this Responsive, Fast and SEO-Friendly WordPress Theme. Your website is guaranteed to look and function great in any kind of display or device, from large TV monitors to the smallest mobile phones.This theme uses the latest and most stable coding practices to make your site is clean, efficient and Secure. WhiteDot is compatible with all the popular plugins from trusted and reliable developers , including WooCommerce, LifterLMS, WPML, BuddyPress, bbPress and all major Page Builders. All the non-essential features used by bloated and slow multipurpose themes has been stripped away, to optimize your website performance and make your website lighter than a feather, and fast as a rocket.The visual customizer will allow you to quickly customize your theme and reach amazing results.
-Version: 1.0.3
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: whitedot
-Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-background, custom-colors, threaded-comments, theme-options
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-WhiteDot is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-
-Font Awesome icons have been used in this theme
-(C)Copyright Dave Gandy
-License: SIL Open Font License, version 1.1.
-Source: http://fontawesome.io/
-
-Screenshot image is the actual screenshot created using the Astra WordPress Theme.
-Images that appear in the screenshot are licensed under CC0.
-
-https://pixabay.com/en/business-content-fashion-leather-1853682/
-https://pixabay.com/en/beverage-coffee-electronics-1838926/
-
-*/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -573,7 +541,6 @@ button:focus, img:focus{
 	height: 0;
 	overflow: hidden;
 	max-width: 100%;
-	height: auto;
 } 
 
 .embed-container iframe,
@@ -909,7 +876,7 @@ a:hover{
 @media (min-width: 768px){
 
 	.has-wp-cart{
-		margin-right: 60px;
+		margin-right: 70px;
 	}
 
 	.primary-nav li a:hover{
@@ -1505,6 +1472,11 @@ input + input[type="submit"] {
 	padding-left: .5em;
 }
 
+#wp-calendar {
+    table-layout: fixed;
+    font-size: 80%;
+}
+
 @media (min-width: 768px){
 	.secondary {
 		width: 30%;
@@ -2010,10 +1982,6 @@ display:none}
 	border-bottom: .5px solid #e5e5e5;
 }
 
-.wd-author-email {
-	font-size: 14px;
-}
-
 /* 404 error page */
 
 .error404{
@@ -2086,10 +2054,6 @@ display:none}
 
 	.single-post .wd-custom-content {
 		padding: 30px 8%;
-	}
-
-	.wd-error-img img{
-		width: 80%;
 	}
 }
 
@@ -2283,6 +2247,64 @@ display:none}
 }
 
 .wd-footer-social-icon:hover{
+	opacity: .4;
+	color: #a5a5a5;
+}
+
+.wd-social-icons ul#menu-social-media-items{
+	margin-top: 15px;
+	margin-left: 0;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.wd-social-icons ul#menu-social-media-items .menu-item {
+    list-style: none;
+    display: inline-block;
+    color: #a5a5a5;
+    transition: .3s;
+    margin: 0 3px;
+}
+.wd-social-icons ul#menu-social-media-items .menu-item a {
+    font-size: .1px;
+    padding: 5px;
+    overflow: auto;
+    transition: .3s;
+}
+
+.wd-social-icons ul#menu-social-media-items .menu-item a:before {
+    font-family: FontAwesome;
+    color: #a5a5a5;
+    font-size: 16px;
+    content: "\f02c";
+    transition: .3s;
+}
+
+.wd-social-icons ul#menu-social-media-items .menu-item a[href*="facebook.com"]:before {
+    content: "\f09a";
+}
+
+.wd-social-icons ul#menu-social-media-items .menu-item a[href*="twitter.com"]:before {
+    content: "\f099";
+}
+
+.wd-social-icons ul#menu-social-media-items .menu-item a[href*="instagram.com"]:before {
+    content: "\f16d";
+}
+
+.wd-social-icons ul#menu-social-media-items .menu-item a[href*="plus.gooogle.com"]:before {
+    content: "\f0d5";
+}
+
+.wd-social-icons ul#menu-social-media-items .menu-item a[href*="pinterest.ca"]:before {
+    content: "\f231";
+}
+
+.wd-social-icons ul#menu-social-media-items .menu-item a[href*="youtube.com"]:before {
+    content: "\f16a";
+}
+
+.wd-social-icons ul#menu-social-media-items .menu-item a:hover:before{
 	opacity: .4;
 	color: #a5a5a5;
 }
@@ -4242,12 +4264,12 @@ input + input[type="submit"] {
 /*--------------------------------------------------------------
     17.6 Course Syllabus
 --------------------------------------------------------------*/
-
 .llms-syllabus-wrapper {
     width: 680px;
     max-width: 100%;
     margin: 0 auto;
     margin-top: 70px;
+    margin-bottom: 40px;
 }
 
 .llms-syllabus-wrapper .llms-section-title {
@@ -4257,16 +4279,19 @@ input + input[type="submit"] {
     margin-top: -8px;
     border-bottom: 1px solid #ddd;
     width: 100%;
-    height: 45px;
+    min-height: 45px;
     display: inline-block;
     text-align: left!important;
-    font-size: 20px;
+    font-size: 18px;
     padding-left: 15px;
+    border: 1px solid #ddd;
 }
 
 .llms-syllabus-wrapper .llms-lesson-preview {
     margin: -8px 0 0 0;
     width: 680px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 
 .llms-syllabus-wrapper .llms-lesson-counter {
@@ -4274,13 +4299,13 @@ input + input[type="submit"] {
 }
 
 .llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-link{
-	background: #ffffff;
+    background: #ffffff;
     border-bottom: 1px solid #dadada;
     transition: .3s;
 }
 
 .llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-link:hover{
-	background: #fcfcfc;
+    background: #fcfcfc;
 }
 
 .llms-syllabus-wrapper .llms-lesson-preview .llms-extra {
@@ -4288,12 +4313,12 @@ input + input[type="submit"] {
     height: 50px;
 }
 
-.llms-lesson-preview.is-complete .llms-lesson-link-locked {
-    padding-left: 15px;
-}
-
 .not-enrolled .llms-syllabus-wrapper .llms-lesson-preview .llms-extra {
     float: right;
+}
+
+.llms-lesson-preview.is-complete .llms-lesson-link-locked {
+    padding-left: 15px;
 }
 
 .llms-syllabus-wrapper .llms-lesson-complete {
@@ -4301,21 +4326,22 @@ input + input[type="submit"] {
 }
 
 .llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-title{
-	padding-top: 6px;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 .llms-syllabus-wrapper .llms-lesson-link-locked, .llms-lesson-link-locked:hover{
-	box-shadow: none;
+    box-shadow: none;
 }
 
 .llms-syllabus-wrapper .llms-icon-free {
-	border-radius: 0!important;
-	margin-top: 13px;
-	background: #0dbbd1;
+    border-radius: 0!important;
+    margin-top: 13px;
+    background: #3db8c8;
 }
 
 .llms-lesson-thumbnail{
-	display: none;
+    display: none;
 }
 
 /*--------------------------------------------------------------

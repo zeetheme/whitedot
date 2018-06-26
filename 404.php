@@ -15,7 +15,7 @@ get_header();
 			<section class="error-404 not-found">
 				<header class="search-page-header">
 					<div class="wd-error-img">
-						<img src="<?php echo(get_template_directory_uri() . "/img/404error.png") ?>">
+						<img src="<?php echo esc_url(get_template_directory_uri() . "/img/404error.png"); ?>">
 					</div>
 					<h1 class="search-page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'whitedot' ); ?></h1>
 				</header><!-- .page-header -->

@@ -38,4 +38,4 @@ function whitedot_pingback_header() {
 }
 add_action( 'wp_head', 'whitedot_pingback_header' );
 
-add_editor_style('assets/css/editor-style.css');
+
