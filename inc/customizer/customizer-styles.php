@@ -59,11 +59,13 @@ a:hover{
 
 
 <?php if( true === get_theme_mod( 'whitedot_hide_tagline', false ) ) { ?>
-    .site-description{
-        display: none;
-    }
-    .site-branding{
-        padding-top: 20px;
+    @media (min-width: 768px){
+        .site-description{
+            display: none;
+        }
+        .site-branding{
+            padding-top: 20px;
+        }
     }
 <?php } ?>
 
@@ -157,426 +159,428 @@ a:hover{
 <?php } ?>
 
 /*--WooCommerce--*/
-
-<?php if ( 0 == get_theme_mod( 'whitedot_show_cart_in_header', 1 ) ) { ?>
-    .primary-nav{
-        margin-right: 0!important;
+<?php if( class_exists( 'WooCommerce' ) ) { ?>
+    <?php if ( 0 == get_theme_mod( 'whitedot_show_cart_in_header', 1 ) ) { ?>
+        .primary-nav{
+            margin-right: 0!important;
+        }
+    <?php } ?>
+    <?php if( 'sidebarleft' === get_theme_mod( 'whitedot_woo_single_product_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .has-sidebar.single-product #primary {
+            float: right;
+            width: 68%;
+        }
+        .has-sidebar.single-product .secondary {
+            float: left;
+            display: block;
+        }
     }
-<?php } ?>
-<?php if( 'sidebarleft' === get_theme_mod( 'whitedot_woo_single_product_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .has-sidebar.single-product #primary {
-        float: right;
-        width: 68%;
+    <?php } ?>
+    <?php if( 'sidebarright' === get_theme_mod( 'whitedot_woo_single_product_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .has-sidebar.single-product #primary {
+            float: left;
+            width: 68%;
+        }
+        .has-sidebar.single-product .secondary {
+            float: right;
+            display: block;
+        }
     }
-    .has-sidebar.single-product .secondary {
-        float: left;
-        display: block;
+    <?php } ?>
+    <?php if( 'sidebarnone' === get_theme_mod( 'whitedot_woo_single_product_sidebar_layout' ) ) { ?> 
+        .has-sidebar.single-product #primary {
+            float: none!important;
+            width: 100%!important;
+        }
+        .has-sidebar.single-product .secondary {
+            display: none;
+        }
+    <?php } ?>
+    <?php if( 'sidebarleft' === get_theme_mod( 'whitedot_woo_shop_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .has-sidebar.post-type-archive-product #primary,
+        .has-sidebar.tax-product_cat #primary,
+        .has-sidebar.tax-product_tag #primary {
+            float: right;
+            width: 68%;
+        }
+        .has-sidebar.post-type-archive-product .secondary,
+        .has-sidebar.tax-product_cat .secondary,
+        .has-sidebar.tax-product_tag .secondary {
+            float: left;
+            display: block;
+        }
     }
-}
-<?php } ?>
-<?php if( 'sidebarright' === get_theme_mod( 'whitedot_woo_single_product_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .has-sidebar.single-product #primary {
-        float: left;
-        width: 68%;
+    <?php } ?>
+    <?php if( 'sidebarright' === get_theme_mod( 'whitedot_woo_shop_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .has-sidebar.post-type-archive-product #primary,
+        .has-sidebar.tax-product_cat #primary,
+        .has-sidebar.tax-product_tag #primary {
+            float: left;
+            width: 68%;
+        }
+        .has-sidebar.post-type-archive-product .secondary,
+        .has-sidebar.tax-product_cat .secondary,
+        .has-sidebar.tax-product_tag .secondary {
+            float: right;
+            display: block;
+        }
     }
-    .has-sidebar.single-product .secondary {
-        float: right;
-        display: block;
+    <?php } ?>
+    <?php if( 'sidebarnone' === get_theme_mod( 'whitedot_woo_shop_sidebar_layout' ) ) { ?> 
+        .has-sidebar.post-type-archive-product #primary,
+        .has-sidebar.tax-product_cat #primary,
+        .has-sidebar.tax-product_tag #primary {
+            float: none!important;
+            width: 100%!important;
+        }
+        .has-sidebar.post-type-archive-product .secondary,
+        .has-sidebar.tax-product_cat .secondary,
+        .has-sidebar.tax-product_tag .secondary {
+            display: none;
+        }
+    <?php } ?>
+    <?php if( 'sidebarleft' === get_theme_mod( 'whitedot_woo_cart_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .has-sidebar.woocommerce-cart #primary {
+            float: right;
+            width: 68%;
+        }
+        .has-sidebar.woocommerce-cart .secondary {
+            float: left;
+            display: block;
+        }
     }
-}
-<?php } ?>
-<?php if( 'sidebarnone' === get_theme_mod( 'whitedot_woo_single_product_sidebar_layout' ) ) { ?> 
-    .has-sidebar.single-product #primary {
-        float: none!important;
-        width: 100%!important;
+    <?php } ?>
+    <?php if( 'sidebarright' === get_theme_mod( 'whitedot_woo_cart_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .has-sidebar.woocommerce-cart #primary {
+            float: left;
+            width: 68%;
+        }
+        .has-sidebar.woocommerce-cart .secondary {
+            float: right;
+            display: block;
+        }
     }
-    .has-sidebar.single-product .secondary {
-        display: none;
+    <?php } ?>
+    <?php if( 'sidebarnone' === get_theme_mod( 'whitedot_woo_cart_sidebar_layout' ) ) { ?> 
+        .has-sidebar.woocommerce-cart #primary {
+            float: none!important;
+            width: 100%!important;
+        }
+        .has-sidebar.woocommerce-cart .secondary {
+            display: none;
+        }
+    <?php } ?>
+    <?php if( 'sidebarleft' === get_theme_mod( 'whitedot_woo_checkout_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .has-sidebar.woocommerce-checkout #primary {
+            float: right;
+            width: 68%;
+        }
+        .has-sidebar.woocommerce-checkout .secondary {
+            float: left;
+            display: block;
+        }
     }
-<?php } ?>
-<?php if( 'sidebarleft' === get_theme_mod( 'whitedot_woo_shop_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .has-sidebar.post-type-archive-product #primary,
-    .has-sidebar.tax-product_cat #primary,
-    .has-sidebar.tax-product_tag #primary {
-        float: right;
-        width: 68%;
+    <?php } ?>
+    <?php if( 'sidebarright' === get_theme_mod( 'whitedot_woo_checkout_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .has-sidebar.woocommerce-checkout #primary {
+            float: left;
+            width: 68%;
+        }
+        .has-sidebar.woocommerce-checkout .secondary {
+            float: right;
+            display: block;
+        }
     }
-    .has-sidebar.post-type-archive-product .secondary,
-    .has-sidebar.tax-product_cat .secondary,
-    .has-sidebar.tax-product_tag .secondary {
-        float: left;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarright' === get_theme_mod( 'whitedot_woo_shop_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .has-sidebar.post-type-archive-product #primary,
-    .has-sidebar.tax-product_cat #primary,
-    .has-sidebar.tax-product_tag #primary {
-        float: left;
-        width: 68%;
-    }
-    .has-sidebar.post-type-archive-product .secondary,
-    .has-sidebar.tax-product_cat .secondary,
-    .has-sidebar.tax-product_tag .secondary {
-        float: right;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarnone' === get_theme_mod( 'whitedot_woo_shop_sidebar_layout' ) ) { ?> 
-    .has-sidebar.post-type-archive-product #primary,
-    .has-sidebar.tax-product_cat #primary,
-    .has-sidebar.tax-product_tag #primary {
-        float: none!important;
-        width: 100%!important;
-    }
-    .has-sidebar.post-type-archive-product .secondary,
-    .has-sidebar.tax-product_cat .secondary,
-    .has-sidebar.tax-product_tag .secondary {
-        display: none;
-    }
-<?php } ?>
-<?php if( 'sidebarleft' === get_theme_mod( 'whitedot_woo_cart_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .has-sidebar.woocommerce-cart #primary {
-        float: right;
-        width: 68%;
-    }
-    .has-sidebar.woocommerce-cart .secondary {
-        float: left;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarright' === get_theme_mod( 'whitedot_woo_cart_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .has-sidebar.woocommerce-cart #primary {
-        float: left;
-        width: 68%;
-    }
-    .has-sidebar.woocommerce-cart .secondary {
-        float: right;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarnone' === get_theme_mod( 'whitedot_woo_cart_sidebar_layout' ) ) { ?> 
-    .has-sidebar.woocommerce-cart #primary {
-        float: none!important;
-        width: 100%!important;
-    }
-    .has-sidebar.woocommerce-cart .secondary {
-        display: none;
-    }
-<?php } ?>
-<?php if( 'sidebarleft' === get_theme_mod( 'whitedot_woo_checkout_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .has-sidebar.woocommerce-checkout #primary {
-        float: right;
-        width: 68%;
-    }
-    .has-sidebar.woocommerce-checkout .secondary {
-        float: left;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarright' === get_theme_mod( 'whitedot_woo_checkout_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .has-sidebar.woocommerce-checkout #primary {
-        float: left;
-        width: 68%;
-    }
-    .has-sidebar.woocommerce-checkout .secondary {
-        float: right;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarnone' === get_theme_mod( 'whitedot_woo_checkout_sidebar_layout' ) ) { ?> 
-    .has-sidebar.woocommerce-checkout #primary {
-        float: none!important;
-        width: 100%!important;
-    }
-    .has-sidebar.woocommerce-checkout .secondary {
-        display: none;
-    }
-<?php } ?>
-<?php if( 'left' === get_theme_mod( 'whitedot_woo_shop_filter_layout' ) ) { ?> 
-    #filter-main::-webkit-scrollbar {
-        display: none;
-    }
-    #filter-main.active {
-        left: 0;
-        transition: .4s;
-    }
-    #filter-main {
-        left: -1000px;
-    }
-    #remove-filter-wrap{
-        float: right;
-    }
-    .whitedot-filter-widgets{
-        clear: both;
-    }
+    <?php } ?>
+    <?php if( 'sidebarnone' === get_theme_mod( 'whitedot_woo_checkout_sidebar_layout' ) ) { ?> 
+        .has-sidebar.woocommerce-checkout #primary {
+            float: none!important;
+            width: 100%!important;
+        }
+        .has-sidebar.woocommerce-checkout .secondary {
+            display: none;
+        }
+    <?php } ?>
+    <?php if( 'left' === get_theme_mod( 'whitedot_woo_shop_filter_layout' ) ) { ?> 
+        #filter-main::-webkit-scrollbar {
+            display: none;
+        }
+        #filter-main.active {
+            left: 0;
+            transition: .4s;
+        }
+        #filter-main {
+            left: -1000px;
+        }
+        #remove-filter-wrap{
+            float: right;
+        }
+        .whitedot-filter-widgets{
+            clear: both;
+        }
+    <?php } ?>
 <?php } ?>
 
 /*--LifterLMS--*/
+<?php if( class_exists( 'LifterLMS' ) ) { ?>
+    <?php if( 'sidebarright' === get_theme_mod( 'whitedot_course_catalog_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .post-type-archive-course.has-sidebar #primary {
+            float: left;
+            width: 68%;
+        }
+        .post-type-archive-course.has-sidebar .secondary {
+            float: right;
+            display: block;
+        }
+    }
+    <?php } ?>
+    <?php if( 'sidebarleft' === get_theme_mod( 'whitedot_course_catalog_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .post-type-archive-course.has-sidebar #primary {
+            float: right;
+            width: 68%;
+        }
+        .post-type-archive-course.has-sidebar .secondary {
+            float: left;
+            display: block;
+        }
+    }
+    <?php } ?>
+    <?php if( 'sidebarnone' === get_theme_mod( 'whitedot_course_catalog_sidebar_layout' ) ) { ?> 
+        .post-type-archive-course.has-sidebar #primary {
+            float: none!important;
+            width: 100%!important;
+        }
+        .post-type-archive-course.has-sidebar .secondary {
+            display: none;
+        }
+    <?php } ?>
+    <?php if( 'sidebarright' === get_theme_mod( 'whitedot_membership_catalog_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .post-type-archive-llms_membership.has-sidebar #primary {
+            float: left;
+            width: 68%;
+        }
+        .post-type-archive-llms_membership.has-sidebar .secondary {
+            float: right;
+            display: block;
+        }
+    }
+    <?php } ?>
+    <?php if( 'sidebarleft' === get_theme_mod( 'whitedot_membership_catalog_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .post-type-archive-llms_membership.has-sidebar #primary {
+            float: right;
+            width: 68%;
+        }
+        .post-type-archive-llms_membership.has-sidebar .secondary {
+            float: left;
+            display: block;
+        }
+    }
+    <?php } ?>
+    <?php if( 'sidebarnone' === get_theme_mod( 'whitedot_membership_catalog_sidebar_layout' ) ) { ?> 
+        .post-type-archive-llms_membership.has-sidebar #primary {
+            float: none!important;
+            width: 100%!important;
+        }
+        .post-type-archive-llms_membership.has-sidebar .secondary {
+            display: none;
+        }
+    <?php } ?>
+    <?php if( 'sidebarright' === get_theme_mod( 'whitedot_single_course_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .single-course.has-sidebar #primary {
+            float: left;
+            width: 68%;
+        }
+        .single-course.has-sidebar .secondary {
+            float: right;
+            display: block;
+        }
+    }
+    <?php } ?>
+    <?php if( 'sidebarleft' === get_theme_mod( 'whitedot_single_course_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .single-course.has-sidebar #primary {
+            float: right;
+            width: 68%;
+        }
+        .single-course.has-sidebar .secondary {
+            float: left;
+            display: block;
+        }
+    }
+    <?php } ?>
+    <?php if( 'sidebarnone' === get_theme_mod( 'whitedot_single_course_sidebar_layout' ) ) { ?> 
+        .single-course.has-sidebar #primary {
+            float: none!important;
+            width: 100%!important;
+        }
+        .single-course.has-sidebar .secondary {
+            display: none;
+        }
+    <?php } ?>
+    <?php if( 'sidebarright' === get_theme_mod( 'whitedot_single_lesson_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .single-lesson.has-sidebar #primary {
+            float: left;
+            width: 68%;
+        }
+        .single-lesson.has-sidebar .secondary {
+            float: right;
+            display: block;
+        }
+    }
+    <?php } ?>
+    <?php if( 'sidebarleft' === get_theme_mod( 'whitedot_single_lesson_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .single-lesson.has-sidebar #primary {
+            float: right;
+            width: 68%;
+        }
+        .single-lesson.has-sidebar .secondary {
+            float: left;
+            display: block;
+        }
+    }
+    <?php } ?>
+    <?php if( 'sidebarnone' === get_theme_mod( 'whitedot_single_lesson_sidebar_layout' ) ) { ?> 
+        .single-lesson.has-sidebar #primary {
+            float: none!important;
+            width: 100%!important;
+        }
 
-<?php if( 'sidebarright' === get_theme_mod( 'whitedot_course_catalog_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .post-type-archive-course.has-sidebar #primary {
-        float: left;
-        width: 68%;
+        .single-lesson.has-sidebar .secondary {
+            display: none;
+        }
+    <?php } ?>
+    <?php if( 'sidebarright' === get_theme_mod( 'whitedot_single_membership_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .single-llms_membership.has-sidebar #primary {
+            float: left;
+            width: 68%;
+        }
+        .single-llms_membership.has-sidebar .secondary {
+            float: right;
+            display: block;
+        }
     }
-    .post-type-archive-course.has-sidebar .secondary {
-        float: right;
-        display: block;
+    <?php } ?>
+    <?php if( 'sidebarleft' === get_theme_mod( 'whitedot_single_membership_sidebar_layout' ) ) { ?> 
+    @media (min-width: 768px){
+        .single-llms_membership.has-sidebar #primary {
+            float: right;
+            width: 68%;
+        }
+        .single-llms_membership.has-sidebar .secondary {
+            float: left;
+            display: block;
+        }
     }
-}
-<?php } ?>
-<?php if( 'sidebarleft' === get_theme_mod( 'whitedot_course_catalog_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .post-type-archive-course.has-sidebar #primary {
-        float: right;
-        width: 68%;
-    }
-    .post-type-archive-course.has-sidebar .secondary {
-        float: left;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarnone' === get_theme_mod( 'whitedot_course_catalog_sidebar_layout' ) ) { ?> 
-    .post-type-archive-course.has-sidebar #primary {
-        float: none!important;
-        width: 100%!important;
-    }
-    .post-type-archive-course.has-sidebar .secondary {
-        display: none;
-    }
-<?php } ?>
-<?php if( 'sidebarright' === get_theme_mod( 'whitedot_membership_catalog_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .post-type-archive-llms_membership.has-sidebar #primary {
-        float: left;
-        width: 68%;
-    }
-    .post-type-archive-llms_membership.has-sidebar .secondary {
-        float: right;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarleft' === get_theme_mod( 'whitedot_membership_catalog_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .post-type-archive-llms_membership.has-sidebar #primary {
-        float: right;
-        width: 68%;
-    }
-    .post-type-archive-llms_membership.has-sidebar .secondary {
-        float: left;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarnone' === get_theme_mod( 'whitedot_membership_catalog_sidebar_layout' ) ) { ?> 
-    .post-type-archive-llms_membership.has-sidebar #primary {
-        float: none!important;
-        width: 100%!important;
-    }
-    .post-type-archive-llms_membership.has-sidebar .secondary {
-        display: none;
-    }
-<?php } ?>
-<?php if( 'sidebarright' === get_theme_mod( 'whitedot_single_course_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .single-course.has-sidebar #primary {
-        float: left;
-        width: 68%;
-    }
-    .single-course.has-sidebar .secondary {
-        float: right;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarleft' === get_theme_mod( 'whitedot_single_course_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .single-course.has-sidebar #primary {
-        float: right;
-        width: 68%;
-    }
-    .single-course.has-sidebar .secondary {
-        float: left;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarnone' === get_theme_mod( 'whitedot_single_course_sidebar_layout' ) ) { ?> 
-    .single-course.has-sidebar #primary {
-        float: none!important;
-        width: 100%!important;
-    }
-    .single-course.has-sidebar .secondary {
-        display: none;
-    }
-<?php } ?>
-<?php if( 'sidebarright' === get_theme_mod( 'whitedot_single_lesson_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .single-lesson.has-sidebar #primary {
-        float: left;
-        width: 68%;
-    }
-    .single-lesson.has-sidebar .secondary {
-        float: right;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarleft' === get_theme_mod( 'whitedot_single_lesson_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .single-lesson.has-sidebar #primary {
-        float: right;
-        width: 68%;
-    }
-    .single-lesson.has-sidebar .secondary {
-        float: left;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarnone' === get_theme_mod( 'whitedot_single_lesson_sidebar_layout' ) ) { ?> 
-    .single-lesson.has-sidebar #primary {
-        float: none!important;
-        width: 100%!important;
-    }
-
-    .single-lesson.has-sidebar .secondary {
-        display: none;
-    }
-<?php } ?>
-<?php if( 'sidebarright' === get_theme_mod( 'whitedot_single_membership_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .single-llms_membership.has-sidebar #primary {
-        float: left;
-        width: 68%;
-    }
-    .single-llms_membership.has-sidebar .secondary {
-        float: right;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarleft' === get_theme_mod( 'whitedot_single_membership_sidebar_layout' ) ) { ?> 
-@media (min-width: 768px){
-    .single-llms_membership.has-sidebar #primary {
-        float: right;
-        width: 68%;
-    }
-    .single-llms_membership.has-sidebar .secondary {
-        float: left;
-        display: block;
-    }
-}
-<?php } ?>
-<?php if( 'sidebarnone' === get_theme_mod( 'whitedot_single_membership_sidebar_layout' ) ) { ?> 
-    .single-llms_membership.has-sidebar #primary {
-        float: none!important;
-        width: 100%!important;
-    }
-    .single-llms_membership.has-sidebar .secondary {
-        display: none;
-    }
-<?php } ?>
-<?php if( false === get_theme_mod( 'whitedot_single_course_metaauthor', true ) ) { ?>
-    .single-course .wd-author{
-        display: none;
-    }
-<?php } ?>
-<?php if( false === get_theme_mod( 'whitedot_single_course_metadate', true ) ) { ?>
-    .single-course .wd-date,
-    .single-course .wd-author:after{
-        display: none;
-    }
-<?php } ?>
-<?php if( false === get_theme_mod( 'whitedot_single_lesson_metaauthor', true ) ) { ?>
-    .single-lesson .wd-author{
-        display: none;
-    }
-<?php } ?>
-<?php if( false === get_theme_mod( 'whitedot_single_lesson_metadate', true ) ) { ?>
-    .single-lesson .wd-date,
-    .single-lesson .wd-author:after{
-        display: none;
-    }
-<?php } ?>
-<?php if( false === get_theme_mod( 'whitedot_single_membership_metaauthor', true ) ) { ?>
-    .single-llms_membership .wd-author{
-        display: none;
-    }
-<?php } ?>
-<?php if( false === get_theme_mod( 'whitedot_single_membership_metadate', true ) ) { ?>
-    .single-llms_membership .wd-date,
-    .single-llms_membership .wd-author:after{
-        display: none;
-    }
-<?php } ?>
-<?php if ( 1 == get_theme_mod( 'whitedot_show_dashboard_nav_icon', 0 ) ) { ?>
-    .llms-student-dashboard .llms-sd-items li a:before {
-        display: inline-block;
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: inherit;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        content: "\f0f6";
-        line-height: 1.618;
-        margin-left: 0.5407911001em;
-        width: 1.41575em;
-        text-align: left;
-        opacity: .25;
-    }
-    li.llms-sd-item.current a:before,
-    li.llms-sd-item a:hover:before{
-    opacity: 1;
-    transition: .3s;
-    }
-    li.llms-sd-item.dashboard a:before{
-    content: "\f0e4";
-    }
-    li.llms-sd-item.view-courses a:before{
-    content: "\f24d";
-    }
-    li.llms-sd-item.view-achievements a:before{
-    content: "\f19d";
-    }
-    li.llms-sd-item.notifications a:before{
-    content: "\f0a2";
-    }
-    li.llms-sd-item.edit-account a:before{
-    content: "\f2c0";
-    }
-    li.llms-sd-item.redeem-voucher a:before{
-    content: "\f02c";
-    }
-    li.llms-sd-item.orders a:before{
-    content: "\f07a";
-    }
-    li.llms-sd-item.signout a:before{
-    content: "\f08b";
-    }
-<?php } ?>
-<?php if( true === get_theme_mod( 'whitedot_llms_duplicate_titles', false ) ) { ?>
-    .llms-sd-section.llms-my-courses .llms-sd-section-title,
-    .llms-sd-section.llms-my-achievements .llms-sd-section-title{
-        display: none;
-    }
+    <?php } ?>
+    <?php if( 'sidebarnone' === get_theme_mod( 'whitedot_single_membership_sidebar_layout' ) ) { ?> 
+        .single-llms_membership.has-sidebar #primary {
+            float: none!important;
+            width: 100%!important;
+        }
+        .single-llms_membership.has-sidebar .secondary {
+            display: none;
+        }
+    <?php } ?>
+    <?php if( false === get_theme_mod( 'whitedot_single_course_metaauthor', true ) ) { ?>
+        .single-course .wd-author{
+            display: none;
+        }
+    <?php } ?>
+    <?php if( false === get_theme_mod( 'whitedot_single_course_metadate', true ) ) { ?>
+        .single-course .wd-date,
+        .single-course .wd-author:after{
+            display: none;
+        }
+    <?php } ?>
+    <?php if( false === get_theme_mod( 'whitedot_single_lesson_metaauthor', true ) ) { ?>
+        .single-lesson .wd-author{
+            display: none;
+        }
+    <?php } ?>
+    <?php if( false === get_theme_mod( 'whitedot_single_lesson_metadate', true ) ) { ?>
+        .single-lesson .wd-date,
+        .single-lesson .wd-author:after{
+            display: none;
+        }
+    <?php } ?>
+    <?php if( false === get_theme_mod( 'whitedot_single_membership_metaauthor', true ) ) { ?>
+        .single-llms_membership .wd-author{
+            display: none;
+        }
+    <?php } ?>
+    <?php if( false === get_theme_mod( 'whitedot_single_membership_metadate', true ) ) { ?>
+        .single-llms_membership .wd-date,
+        .single-llms_membership .wd-author:after{
+            display: none;
+        }
+    <?php } ?>
+    <?php if ( 1 == get_theme_mod( 'whitedot_show_dashboard_nav_icon', 0 ) ) { ?>
+        .llms-student-dashboard .llms-sd-items li a:before {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "\f0f6";
+            line-height: 1.618;
+            margin-left: 0.5407911001em;
+            width: 1.41575em;
+            text-align: left;
+            opacity: .25;
+        }
+        li.llms-sd-item.current a:before,
+        li.llms-sd-item a:hover:before{
+        opacity: 1;
+        transition: .3s;
+        }
+        li.llms-sd-item.dashboard a:before{
+        content: "\f0e4";
+        }
+        li.llms-sd-item.view-courses a:before{
+        content: "\f24d";
+        }
+        li.llms-sd-item.view-achievements a:before{
+        content: "\f19d";
+        }
+        li.llms-sd-item.notifications a:before{
+        content: "\f0a2";
+        }
+        li.llms-sd-item.edit-account a:before{
+        content: "\f2c0";
+        }
+        li.llms-sd-item.redeem-voucher a:before{
+        content: "\f02c";
+        }
+        li.llms-sd-item.orders a:before{
+        content: "\f07a";
+        }
+        li.llms-sd-item.signout a:before{
+        content: "\f08b";
+        }
+    <?php } ?>
+    <?php if( true === get_theme_mod( 'whitedot_llms_duplicate_titles', false ) ) { ?>
+        .llms-sd-section.llms-my-courses .llms-sd-section-title,
+        .llms-sd-section.llms-my-achievements .llms-sd-section-title{
+            display: none;
+        }
+    <?php } ?>
 <?php } ?>
 
 /*--Blog--*/

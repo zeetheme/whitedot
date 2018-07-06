@@ -17,7 +17,7 @@ function whitedot_scripts() {
 
 	wp_enqueue_style('font-awesome-min', get_stylesheet_directory_uri() . '/css/font-awesome.min.css'); 
 
-	wp_enqueue_style('whitedot-style-minified', get_stylesheet_directory_uri() . '/css/minified/style.min.css'); 
+	wp_enqueue_style('whitedot-style-minified', get_stylesheet_directory_uri() . '/css/minified/main-style.min.css');
 
 	wp_enqueue_script('whitedot-main-js', get_template_directory_uri() . '/js/script.js', array('jquery'), '', true );
 

@@ -107,3 +107,12 @@ If WooCommerce plugin is activated, 2 more widget areas will appear - "Cart Widg
 * Improvement in Theme Customizer
 * Removed the Social Icons options from Customizer and added Social Icons Navigation Menu. 
 * A Navigation Menu named "Social Icon" Menu will automatically be created when theme is activated.
+
+### 1.0.6 - June 26 2018 ###
+* Minor Improvements
+
+### 1.0.7 - July 5 2018 ###
+* LifterLMS and WooCommerce Customizer Settings will only appear, when these themes are active.
+
+### 1.0.8 - July 7 2018 ###
+* Minor Improvements

@@ -12,11 +12,13 @@
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-name' ).text( to );
+      $( '.wd-footer-title span' ).text( to );
 		} );
 	} );
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-description' ).text( to );
+      $( '.footer-site-description' ).text( to );
 		} );
 	} );
 
@@ -77,14 +79,14 @@
         } );
   	});
 
-  	// Body Font Size
-	wp.customize( 'whitedot_body_text_font_size', function( value ) {
+    // Body Font Size
+  wp.customize( 'whitedot_body_text_font_size', function( value ) {
         value.bind( function( to ) {
             $( 'body' ).css( {
                     'font-size': to + 'px'
             } );
         } );
-  	});
+    });
 
   	// Body Line Height
 	wp.customize( 'whitedot_body_text_line_height', function( value ) {

@@ -205,7 +205,7 @@ function whitedot_header_cart(){
 				</a>
 				<a class="wdcart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_html( __( 'View your shopping cart', 'whitedot' ) ); ?>">
 
-					<?php echo esc_attr( $cart_count ); ?>
+					<?php echo esc_html( $cart_count ); ?>
 					
 				</a> 
 			</div><!--.wd-cart-container -->
@@ -234,7 +234,7 @@ function whitedot_mob_header_cart(){
 				</a>
 				<a class="wdcart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_html( __( 'View your shopping cart', 'whitedot' ) ); ?>">
 
-					<?php echo esc_attr( $cart_count ); ?>
+					<?php echo esc_html( $cart_count ); ?>
 					
 				</a> 
 			</div><!--wd-cart-container-mob -->

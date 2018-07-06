@@ -17,7 +17,7 @@
 11 Widgets
 12 Content
 	12.1 Header 
-	12.2 Posts & Pagess
+	12.2 Posts & Pages
 	12.4 Comments
 	12.5 Footer
 13 Infinite scroll
@@ -1399,23 +1399,23 @@ input + input[type="submit"] {
 		max-width: 1200px;
 		margin-left: auto;
 		margin-right: auto;
-		padding: 0 2.617924em;
+		padding: 0 40px;
 		box-sizing: content-box;
 	}
 }
 
 @media (max-width: 768px){
 	.col-full, .custom-col-full {
-		margin-left: 1.3em;
-		margin-right: 1.3em;
+		margin-left: 20px;
+		margin-right: 20px;
 		padding: 0;
 	}
 }
 
 @media (max-width: 500px){
 	.col-full, .custom-col-full {
-		margin-left: .5em;
-		margin-right: .5em;
+		margin-left: 15px;
+		margin-right: 15px;
 		padding: 0;
 	}
 }
@@ -1522,7 +1522,7 @@ input + input[type="submit"] {
 .site-branding {
 	display: block;
 	float: left;
-	padding-top: 10px;
+	padding-top: 9px;
 
 }
 
@@ -2023,6 +2023,12 @@ display:none}
 	background: #2196F3;
 }
 
+/*Full Width*/
+.page-template-template-full-width .site-content .col-full{
+	max-width: unset;
+	margin: 0;
+	padding: 0;
+}
 
 
 @media (min-width: 768px){
@@ -2089,35 +2095,6 @@ display:none}
 	list-style-type: none;
 }
 
-.comment-meta {
-	position: relative;
-}
-
-.comment-author.vcard {
-	position: relative;
-	height: 80px;
-	font-size: 18px;
-}
-
-.comment-author.vcard img {
-	margin-top: 10px;
-	position: absolute;
-	height: 60px;
-	width: auto;
-}
-
-.comment-author.vcard b.fn {
-	display: inline-block;
-	line-height: 60px;
-	margin-left: 80px;
-}
-
-.comment-metadata {
-	padding-left: 80px;
-	position: absolute;
-	top: 35px;
-}
-
 .comment-metadata a, .comment-metadata span {
 	color: #666;
 	font-size: 13px;
@@ -2153,6 +2130,37 @@ display:none}
 
 .comment-body {
 	margin-bottom: 30px;
+}
+
+@media ( min-width: 550px ){
+	.comment-meta {
+		position: relative;
+	}
+
+	.comment-author.vcard {
+		position: relative;
+		height: 80px;
+		font-size: 18px;
+	}
+
+	.comment-author.vcard img {
+		margin-top: 10px;
+		position: absolute;
+		height: 60px;
+		width: auto;
+	}
+
+	.comment-author.vcard b.fn {
+		display: inline-block;
+		line-height: 60px;
+		margin-left: 80px;
+	}
+
+	.comment-metadata {
+		padding-left: 80px;
+		position: absolute;
+		top: 35px;
+	}
 }
 
 /*--------------------------------------------------------------

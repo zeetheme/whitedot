@@ -145,12 +145,20 @@ if ( class_exists( 'LifterLMS' ) ) {
 }
 
 /**
- * Blog Page Excerpt Length
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
  */
 function whitedot_excerpt_length( $length ) {
-	return 35;
+	if ( is_admin() ) {
+		return $length;
+	}else{
+		return 35;
+	}
 }
 add_filter( 'excerpt_length', 'whitedot_excerpt_length', 999 );
+
 
 
 

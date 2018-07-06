@@ -1,9 +1,10 @@
-=== WhiteDot ===
+
+= WhiteDot =
 
 Contributors: ZeeTheme
 Requires at least: 4.5
 Tested up to: 4.9.6
-Version: 1.0.5
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-background, custom-colors, threaded-comments, theme-options
@@ -22,19 +23,19 @@ Experience the perfection in design of this Responsive, Fast and SEO-Friendly Wo
 
 == Frequently Asked Questions ==
 
-= Is WhiteDot Free? =
+**Is WhiteDot Free?**
 Yes! WhiteDot is 100% free and open source theme, and it will always will be.
 
-= Where can I find documentation? =
+**Where can I find documentation?**
 Yes, WhiteDot has extensive documentation you can find [here](https://zeetheme.com/whitedot-docs/).
 
-= Do you offer support? =
+**Do you offer support?**
 Definitely. We offer support for the free theme in the [WordPress.org forums](https://wordpress.org/support/theme/whitedot).
 
-= Where can I find the theme options? =
+**Where can I find the theme options?**
 All of our options can be found in the Customizer in 'Appearance > Customize'.
 
-= Does WhiteDot have any widget areas? =
+**Does WhiteDot have any widget areas?**
 WhiteDot has 2 widget areas which you can add widgets to in Appearance > Widgets.
 
 If WooCommerce plugin is activated, 2 more widget areas will appear - "Cart Widget" and "Product Filter Widget" in Appearance > Widgets.
@@ -85,24 +86,29 @@ GNU General Public License for more details.
 * Removed the Social Icons options from Customizer and added Social Icons Navigation Menu. 
 * A Navigation Menu named "Social Icon" Menu will automatically be created when theme is activated.
 
+= 1.0.6 - June 26 2018
+* Minor Improvement
+
+= 1.0.7 - July 5 2018
+* LifterLMS and WooCommerce Customizer Settings will only appear, when these themes are active.
+
+= 1.0.8 - July 7 2018
+* Minor Improvement
 
 
 == Credits ==
+
+* WhiteDot WordPress Theme, Copyright 2018 ZeeTheme, WhiteDot is distributed under the terms of the GNU GPL
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 
-*Font Awesome icons, Copyright Dave Gandy, License: SIL Open Font License, version 1.1, Source: http://fontawesome.io/
+* Font Awesome icons, Copyright Dave Gandy, License: SIL Open Font License, version 1.1, Source: http://fontawesome.io/
 
-*Slider Custom Control and Image Check Box Custom Control Scripts (js/customizer-custom.js)
- * author Anthony Hortin <http://maddisondesigns.com>
- * license http://www.gnu.org/licenses/gpl-2.0.html
- * link https://github.com/maddisondesigns
+* Slider Custom Control and Image Check Box Custom Control Scripts (js/customizer-custom.js), author Anthony Hortin <http://maddisondesigns.com>, license http://www.gnu.org/licenses/gpl-2.0.html, link https://github.com/maddisondesigns
 
-*Screenshot image is the actual screenshot created using the WhiteDot WordPress Theme.
-Images that appear in the screenshot are licensed under CC0.
+* Screenshot image is the actual screenshot created using the WhiteDot WordPress Theme. Images that appear in the screenshot are licensed under CC0.
 
 	https://pixabay.com/en/business-content-fashion-leather-1853682/
 	https://pixabay.com/en/beverage-coffee-electronics-1838926/
-

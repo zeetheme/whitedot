@@ -365,14 +365,29 @@ function whitedot_footer_credits(){
 	?>
 	<p class="footer-credit"><?php
 
-	printf( '%1$s &copy %2$s - <a href="%3$s" target="_blank">%4$s</a>',
-			esc_html_e( 'COPYRIGHT', 'whitedot' ),
-			esc_html( date( 'Y' ) ),
-			esc_url( 'https://zeetheme.com' ),
-			esc_html( __( 'ZeeTheme', 'whitedot' ) )
-		);
+	printf( '%1$s &copy %2$s - ',
+		esc_html_e( 'COPYRIGHT', 'whitedot' ),
+		esc_html( date( 'Y' ) )
+	);
+
+	bloginfo('name');
+
+	?>  //  <?php
+
+	printf( '%1$s -  <a href="%2$s" target="_blank">%3$s</a>',
+		esc_html_e( 'Dedigned By', 'whitedot' ),
+		esc_url( 'https://zeetheme.com' ),
+		esc_html( __( 'ZeeTheme', 'whitedot' ) )
+	);
 
 	?>
 	</p>
 	<?php
 }
+
+// printf( '%1$s &copy %2$s - <a href="%3$s" target="_blank">%4$s</a>',
+// 			esc_html_e( 'COPYRIGHT', 'whitedot' ),
+// 			esc_html( date( 'Y' ) ),
+// 			esc_url( 'https://zeetheme.com' ),
+// 			esc_html( __( 'ZeeTheme', 'whitedot' ) )
+// 		);

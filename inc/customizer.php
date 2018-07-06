@@ -579,783 +579,787 @@ function whitedot_customize_register( $wp_customize ) {
         )
     );
 
+    if ( class_exists( 'WooCommerce' ) ) {
 
-    /*////////////////////////////////////////////////////////////////////////
-                                    WooCommerce Panel                               
-    ////////////////////////////////////////////////////////////////////////*/
+      /*////////////////////////////////////////////////////////////////////////
+                                      WooCommerce Panel                               
+      ////////////////////////////////////////////////////////////////////////*/
 
-    $wp_customize->add_panel( 'whitedot_woocommerce_panel' , array(
-        'priority' => 70,
-        'capability' => 'edit_theme_options',
-        'theme_supports' => '',
-        'title' => __( 'WooCommerce Settings', 'whitedot' ),
-        
-        )
-    );
-
-    //WooCommerce General
-    $wp_customize->add_section( 'whitedot_woocommerce_general_section' , array(
-        'title'      => __('General','whitedot'),
-        'priority'   => 10,
-        'panel'        => 'whitedot_woocommerce_panel',
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_show_cart_in_header',
-       array(
-          'default' => 1,
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_switch_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_cart_in_header',
-       array(
-          'label' => esc_html__( 'Header Mini Cart', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_general_section'
-       )
-    ) );
-
-    //WooCommerce Shop
-    $wp_customize->add_section( 'whitedot_woocommerce_shop_section' , array(
-        'title'      => __('Shop','whitedot'),
-        'priority'   => 20,
-        'panel'        => 'whitedot_woocommerce_panel',
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_woo_shop_sidebar_layout',
-       array(
-          'default' => 'sidebarnone',
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_woo_shop_sidebar_layout',
-       array(
-          'label' => __( 'Sidebar Layout', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_shop_section',
-          'choices' => array(
-             'sidebarleft' => array(  
-                'image' =>  get_template_directory_uri() . '/img/left-sidebar.png',
-                'name' => __( 'Left Sidebar', 'whitedot' ) //
-             ),
-             'sidebarnone' => array(
-                'image' => get_template_directory_uri() . '/img/fullwidth.png',
-                'name' => __( 'No Sidebar', 'whitedot' )
-             ),
-             'sidebarright' => array(
-                'image' => get_template_directory_uri() . '/img/right-sidebar.png',
-                'name' => __( 'Right Sidebar', 'whitedot' )
-             )
+      $wp_customize->add_panel( 'whitedot_woocommerce_panel' , array(
+          'priority' => 70,
+          'capability' => 'edit_theme_options',
+          'theme_supports' => '',
+          'title' => __( 'WooCommerce Settings', 'whitedot' ),
+          
           )
-       )
-    ) );
+      );
 
-    $wp_customize->add_setting( 'whitedot_woo_product_columns',
-       array(
-          'default' => 3,
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_sanitize_integer'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_woo_product_columns',
-       array(
-          'label' => esc_html__( 'Product Columns', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_shop_section',
-          'input_attrs' => array(
-             'min' => 1, 
-             'max' => 6, 
-             'step' => 1, 
-          ),
-       )
-    ) );
+      //WooCommerce General
+      $wp_customize->add_section( 'whitedot_woocommerce_general_section' , array(
+          'title'      => __('General','whitedot'),
+          'priority'   => 10,
+          'panel'        => 'whitedot_woocommerce_panel',
+      ) );
 
-    $wp_customize->add_setting( 'whitedot_shop_products_per_page',
-       array(
-          'default' => 12,
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_sanitize_integer'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_shop_products_per_page',
-       array(
-          'label' => esc_html__( 'Product Per Page ', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_shop_section',
-          'input_attrs' => array(
-             'min' => 1, 
-             'max' => 50, 
-             'step' => 1, 
-          ),
-       )
-    ) );
+      $wp_customize->add_setting( 'whitedot_show_cart_in_header',
+         array(
+            'default' => 1,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_switch_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_cart_in_header',
+         array(
+            'label' => esc_html__( 'Header Mini Cart', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_general_section'
+         )
+      ) );
 
-    $wp_customize->add_setting( 'whitedot_show_add_to_cart',
-       array(
-          'default' => 1,
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_switch_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_add_to_cart',
-       array(
-          'label' => esc_html__( 'Show Add to Cart Button', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_shop_section'
-       )
-    ) );
+      //WooCommerce Shop
+      $wp_customize->add_section( 'whitedot_woocommerce_shop_section' , array(
+          'title'      => __('Shop','whitedot'),
+          'priority'   => 20,
+          'panel'        => 'whitedot_woocommerce_panel',
+      ) );
 
-    $wp_customize->add_setting( 'whitedot_show_product_filter',
-       array(
-          'default' => 1,
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_switch_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_product_filter',
-       array(
-          'label' => esc_html__( 'Show Product Filter', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_shop_section'
-       )
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_woo_shop_filter_layout',
-       array(
-          'default' => 'right',
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_sanitize_choice'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Text_Radio_Button_Custom_Control( $wp_customize, 'whitedot_woo_shop_filter_layout',
-       array(
-          'label' => __( 'Shop Filter Layout', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_shop_section',
-          'choices' => array(
-             'left' => __( 'Left', 'whitedot' ), 
-             'right' => __( 'Right', 'whitedot' )
-          )
-       )
-    ) );
-
-    //WooCommerce Single Product
-    $wp_customize->add_section( 'whitedot_woocommerce_single_product_section' , array(
-        'title'      => __('Single Product','whitedot'),
-        'priority'   => 30,
-        'panel'        => 'whitedot_woocommerce_panel',
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_woo_single_product_sidebar_layout',
-       array(
-          'default' => 'sidebarnone',
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_woo_single_product_sidebar_layout',
-       array(
-          'label' => __( 'Sidebar Layout', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_single_product_section',
-          'choices' => array(
-             'sidebarleft' => array(
-                'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
-                'name' => __( 'Left Sidebar', 'whitedot' ) 
-             ),
-             'sidebarnone' => array(
-                'image' => get_template_directory_uri() . '/img/fullwidth.png',
-                'name' => __( 'No Sidebar', 'whitedot' )
-             ),
-             'sidebarright' => array(
-                'image' => get_template_directory_uri() . '/img/right-sidebar.png',
-                'name' => __( 'Right Sidebar', 'whitedot' )
-             )
-          )
-       )
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_woo_related_product_column',
-       array(
-          'default' => 3,
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_sanitize_integer'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_woo_related_product_column',
-       array(
-          'label' => esc_html__( 'Related Product Columns', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_single_product_section',
-          'input_attrs' => array(
-             'min' => 1, 
-             'max' => 6, 
-             'step' => 1, 
-          ),
-       )
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_woo_related_product_per_page',
-       array(
-          'default' => 3,
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_sanitize_integer'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_woo_related_product_per_page',
-       array(
-          'label' => esc_html__( 'Related Product Per Page', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_single_product_section',
-          'input_attrs' => array(
-             'min' => 1, 
-             'max' => 12, 
-             'step' => 1, 
-          ),
-       )
-    ) );
-
-    //WooCommerce Cart
-    $wp_customize->add_section( 'whitedot_woocommerce_cart_section' , array(
-        'title'      => __('Cart','whitedot'),
-        'priority'   => 40,
-        'panel'        => 'whitedot_woocommerce_panel',
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_woo_cart_sidebar_layout',
-       array(
-          'default' => 'sidebarnone',
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_woo_cart_sidebar_layout',
-       array(
-          'label' => __( 'Sidebar Layout', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_cart_section',
-          'choices' => array(
-             'sidebarleft' => array(
-                'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
-                'name' => __( 'Left Sidebar', 'whitedot' )
-             ),
-             'sidebarnone' => array(
-                'image' => get_template_directory_uri() . '/img/fullwidth.png',
-                'name' => __( 'No Sidebar', 'whitedot' )
-             ),
-             'sidebarright' => array(
-                'image' => get_template_directory_uri() . '/img/right-sidebar.png',
-                'name' => __( 'Right Sidebar', 'whitedot' )
-             )
-          )
-       )
-    ) );
-
-    //WooCommerce Checkout
-    $wp_customize->add_section( 'whitedot_woocommerce_checkout_section' , array(
-        'title'      => __('Checkout','whitedot'),
-        'priority'   => 40,
-        'panel'        => 'whitedot_woocommerce_panel',
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_woo_checkout_sidebar_layout',
-       array(
-          'default' => 'sidebarright',
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_woo_checkout_sidebar_layout',
-       array(
-          'label' => __( 'Sidebar Layout', 'whitedot' ),
-          'section' => 'whitedot_woocommerce_checkout_section',
-          'choices' => array(
-             'sidebarleft' => array(
-                'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
-                'name' => __( 'Left Sidebar', 'whitedot' )
-             ),
-             'sidebarnone' => array(
-                'image' => get_template_directory_uri() . '/img/fullwidth.png',
-                'name' => __( 'No Sidebar', 'whitedot' )
-             ),
-             'sidebarright' => array(
-                'image' => get_template_directory_uri() . '/img/right-sidebar.png',
-                'name' => __( 'Right Sidebar', 'whitedot' )
-             )
-          )
-       )
-    ) );
-
-    /*////////////////////////////////////////////////////////////////////////
-                                LifterLMS Panel                               
-    ////////////////////////////////////////////////////////////////////////*/
-
-    $wp_customize->add_panel( 'whitedot_lifterlms_panel' , array(
-        'priority' => 80,
-        'capability' => 'edit_theme_options',
-        'theme_supports' => '',
-        'title' => __( 'LifterLMS Settings', 'whitedot' ),
-        
-        )
-    );
-
-    //Course Catalog
-    $wp_customize->add_section( 'whitedot_course_catalog_section' , array(
-        'title'      => __('Course Catelog','whitedot'),
-        'priority'   => 10,
-        'panel'        => 'whitedot_lifterlms_panel',
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_course_catalog_sidebar_layout',
-       array(
-          'default' => 'sidebarnone',
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_course_catalog_sidebar_layout',
-       array(
-          'label' => __( 'Sidebar Layout', 'whitedot' ),
-          'section' => 'whitedot_course_catalog_section',
-          'choices' => array(
-             'sidebarleft' => array(
-                'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
-                'name' => __( 'Left Sidebar', 'whitedot' )
-             ),
-             'sidebarnone' => array(
-                'image' => get_template_directory_uri() . '/img/fullwidth.png',
-                'name' => __( 'No Sidebar', 'whitedot' )
-             ),
-             'sidebarright' => array(
-                'image' => get_template_directory_uri() . '/img/right-sidebar.png',
-                'name' => __( 'Right Sidebar', 'whitedot' )
-             )
-          )
-       )
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_course_catalog_column',
-       array(
-          'default' => 3,
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_sanitize_integer'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_course_catalog_column',
-       array(
-          'label' => esc_html__( 'Course Catalog Columns', 'whitedot' ),
-          'section' => 'whitedot_course_catalog_section',
-          'input_attrs' => array(
-             'min' => 1, 
-             'max' => 6, 
-             'step' => 1, 
-          ),
-       )
-    ) );
-
-    //Membership Catalog
-    $wp_customize->add_section( 'whitedot_membership_catalog_section' , array(
-        'title'      => __('Membership Catelog','whitedot'),
-        'priority'   => 20,
-        'panel'        => 'whitedot_lifterlms_panel',
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_membership_catalog_sidebar_layout',
-       array(
-          'default' => 'sidebarnone',
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_membership_catalog_sidebar_layout',
-       array(
-          'label' => __( 'Sidebar Layout', 'whitedot' ),
-          'section' => 'whitedot_membership_catalog_section',
-          'choices' => array(
-             'sidebarleft' => array(
-                'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
-                'name' => __( 'Left Sidebar', 'whitedot' )
-             ),
-             'sidebarnone' => array(
-                'image' => get_template_directory_uri() . '/img/fullwidth.png',
-                'name' => __( 'No Sidebar', 'whitedot' )
-             ),
-             'sidebarright' => array(
-                'image' => get_template_directory_uri() . '/img/right-sidebar.png',
-                'name' => __( 'Right Sidebar', 'whitedot' )
-             )
-          )
-       )
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_membership_catalog_column',
-       array(
-          'default' => 3,
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_sanitize_integer'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_membership_catalog_column',
-       array(
-          'label' => esc_html__( 'Membership Catalog Columns', 'whitedot' ),
-          'section' => 'whitedot_membership_catalog_section',
-          'input_attrs' => array(
-             'min' => 1, 
-             'max' => 6, 
-             'step' => 1, 
-          ),
-       )
-    ) );
-
-    //Dashboard
-    $wp_customize->add_section( 'whitedot_llms_dashboard_section' , array(
-        'title'      => __('Dashboard','whitedot'),
-        'priority'   => 25,
-        'panel'        => 'whitedot_lifterlms_panel',
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_llms_dashboard_sidebar_layout',
-       array(
-          'default' => 'sidebarnone',
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_llms_dashboard_sidebar_layout',
-       array(
-          'label' => __( 'Sidebar Layout', 'whitedot' ),
-          'section' => 'whitedot_llms_dashboard_section',
-          'choices' => array(
-             'sidebarleft' => array(
-                'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
-                'name' => __( 'Left Sidebar', 'whitedot' )
-             ),
-             'sidebarnone' => array(
-                'image' => get_template_directory_uri() . '/img/fullwidth.png',
-                'name' => __( 'No Sidebar', 'whitedot' )
-             ),
-             'sidebarright' => array(
-                'image' => get_template_directory_uri() . '/img/right-sidebar.png',
-                'name' => __( 'Right Sidebar', 'whitedot' )
-             )
-          )
-       )
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_show_dashboard_nav_icon',
-       array(
-          'default' => 0,
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_switch_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_dashboard_nav_icon',
-       array(
-          'label' => esc_html__( 'Show Navigation Icons', 'whitedot' ),
-          'section' => 'whitedot_llms_dashboard_section'
-       )
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_llms_duplicate_titles' , array(
-        'transport' => 'refresh',
-        'default'    =>  '',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'whitedot_llms_duplicate_titles',
-            array(
-                'label'          => __( 'Remove Duplicate Titles', 'whitedot' ),
-                'section'        => 'whitedot_llms_dashboard_section',
-                'type'           => 'checkbox',
-                
+      $wp_customize->add_setting( 'whitedot_woo_shop_sidebar_layout',
+         array(
+            'default' => 'sidebarnone',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_woo_shop_sidebar_layout',
+         array(
+            'label' => __( 'Sidebar Layout', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_shop_section',
+            'choices' => array(
+               'sidebarleft' => array(  
+                  'image' =>  get_template_directory_uri() . '/img/left-sidebar.png',
+                  'name' => __( 'Left Sidebar', 'whitedot' ) //
+               ),
+               'sidebarnone' => array(
+                  'image' => get_template_directory_uri() . '/img/fullwidth.png',
+                  'name' => __( 'No Sidebar', 'whitedot' )
+               ),
+               'sidebarright' => array(
+                  'image' => get_template_directory_uri() . '/img/right-sidebar.png',
+                  'name' => __( 'Right Sidebar', 'whitedot' )
+               )
             )
-        )
-    );
+         )
+      ) );
 
+      $wp_customize->add_setting( 'whitedot_woo_product_columns',
+         array(
+            'default' => 3,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_sanitize_integer'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_woo_product_columns',
+         array(
+            'label' => esc_html__( 'Product Columns', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_shop_section',
+            'input_attrs' => array(
+               'min' => 1, 
+               'max' => 6, 
+               'step' => 1, 
+            ),
+         )
+      ) );
 
-    //Single Course 
-    $wp_customize->add_section( 'whitedot_single_course_section' , array(
-        'title'      => __('Single Course','whitedot'),
-        'priority'   => 30,
-        'panel'        => 'whitedot_lifterlms_panel',
-    ) );
+      $wp_customize->add_setting( 'whitedot_shop_products_per_page',
+         array(
+            'default' => 12,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_sanitize_integer'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_shop_products_per_page',
+         array(
+            'label' => esc_html__( 'Product Per Page ', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_shop_section',
+            'input_attrs' => array(
+               'min' => 1, 
+               'max' => 50, 
+               'step' => 1, 
+            ),
+         )
+      ) );
 
-    $wp_customize->add_setting( 'whitedot_single_course_sidebar_layout',
-       array(
-          'default' => 'sidebarright',
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_single_course_sidebar_layout',
-       array(
-          'label' => __( 'Sidebar Layout', 'whitedot' ),
-          'section' => 'whitedot_single_course_section',
-          'choices' => array(
-             'sidebarleft' => array(
-                'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
-                'name' => __( 'Left Sidebar', 'whitedot' )
-             ),
-             'sidebarnone' => array(
-                'image' => get_template_directory_uri() . '/img/fullwidth.png',
-                'name' => __( 'No Sidebar', 'whitedot' )
-             ),
-             'sidebarright' => array(
-                'image' => get_template_directory_uri() . '/img/right-sidebar.png',
-                'name' => __( 'Right Sidebar', 'whitedot' )
-             )
+      $wp_customize->add_setting( 'whitedot_show_add_to_cart',
+         array(
+            'default' => 1,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_switch_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_add_to_cart',
+         array(
+            'label' => esc_html__( 'Show Add to Cart Button', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_shop_section'
+         )
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_show_product_filter',
+         array(
+            'default' => 1,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_switch_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_product_filter',
+         array(
+            'label' => esc_html__( 'Show Product Filter', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_shop_section'
+         )
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_woo_shop_filter_layout',
+         array(
+            'default' => 'right',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_sanitize_choice'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Text_Radio_Button_Custom_Control( $wp_customize, 'whitedot_woo_shop_filter_layout',
+         array(
+            'label' => __( 'Shop Filter Layout', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_shop_section',
+            'choices' => array(
+               'left' => __( 'Left', 'whitedot' ), 
+               'right' => __( 'Right', 'whitedot' )
+            )
+         )
+      ) );
+
+      //WooCommerce Single Product
+      $wp_customize->add_section( 'whitedot_woocommerce_single_product_section' , array(
+          'title'      => __('Single Product','whitedot'),
+          'priority'   => 30,
+          'panel'        => 'whitedot_woocommerce_panel',
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_woo_single_product_sidebar_layout',
+         array(
+            'default' => 'sidebarnone',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_woo_single_product_sidebar_layout',
+         array(
+            'label' => __( 'Sidebar Layout', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_single_product_section',
+            'choices' => array(
+               'sidebarleft' => array(
+                  'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
+                  'name' => __( 'Left Sidebar', 'whitedot' ) 
+               ),
+               'sidebarnone' => array(
+                  'image' => get_template_directory_uri() . '/img/fullwidth.png',
+                  'name' => __( 'No Sidebar', 'whitedot' )
+               ),
+               'sidebarright' => array(
+                  'image' => get_template_directory_uri() . '/img/right-sidebar.png',
+                  'name' => __( 'Right Sidebar', 'whitedot' )
+               )
+            )
+         )
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_woo_related_product_column',
+         array(
+            'default' => 3,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_sanitize_integer'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_woo_related_product_column',
+         array(
+            'label' => esc_html__( 'Related Product Columns', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_single_product_section',
+            'input_attrs' => array(
+               'min' => 1, 
+               'max' => 6, 
+               'step' => 1, 
+            ),
+         )
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_woo_related_product_per_page',
+         array(
+            'default' => 3,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_sanitize_integer'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_woo_related_product_per_page',
+         array(
+            'label' => esc_html__( 'Related Product Per Page', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_single_product_section',
+            'input_attrs' => array(
+               'min' => 1, 
+               'max' => 12, 
+               'step' => 1, 
+            ),
+         )
+      ) );
+
+      //WooCommerce Cart
+      $wp_customize->add_section( 'whitedot_woocommerce_cart_section' , array(
+          'title'      => __('Cart','whitedot'),
+          'priority'   => 40,
+          'panel'        => 'whitedot_woocommerce_panel',
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_woo_cart_sidebar_layout',
+         array(
+            'default' => 'sidebarnone',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_woo_cart_sidebar_layout',
+         array(
+            'label' => __( 'Sidebar Layout', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_cart_section',
+            'choices' => array(
+               'sidebarleft' => array(
+                  'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
+                  'name' => __( 'Left Sidebar', 'whitedot' )
+               ),
+               'sidebarnone' => array(
+                  'image' => get_template_directory_uri() . '/img/fullwidth.png',
+                  'name' => __( 'No Sidebar', 'whitedot' )
+               ),
+               'sidebarright' => array(
+                  'image' => get_template_directory_uri() . '/img/right-sidebar.png',
+                  'name' => __( 'Right Sidebar', 'whitedot' )
+               )
+            )
+         )
+      ) );
+
+      //WooCommerce Checkout
+      $wp_customize->add_section( 'whitedot_woocommerce_checkout_section' , array(
+          'title'      => __('Checkout','whitedot'),
+          'priority'   => 40,
+          'panel'        => 'whitedot_woocommerce_panel',
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_woo_checkout_sidebar_layout',
+         array(
+            'default' => 'sidebarright',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_woo_checkout_sidebar_layout',
+         array(
+            'label' => __( 'Sidebar Layout', 'whitedot' ),
+            'section' => 'whitedot_woocommerce_checkout_section',
+            'choices' => array(
+               'sidebarleft' => array(
+                  'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
+                  'name' => __( 'Left Sidebar', 'whitedot' )
+               ),
+               'sidebarnone' => array(
+                  'image' => get_template_directory_uri() . '/img/fullwidth.png',
+                  'name' => __( 'No Sidebar', 'whitedot' )
+               ),
+               'sidebarright' => array(
+                  'image' => get_template_directory_uri() . '/img/right-sidebar.png',
+                  'name' => __( 'Right Sidebar', 'whitedot' )
+               )
+            )
+         )
+      ) );
+    }
+
+    if ( class_exists( 'LifterLMS' ) ) {
+      /*////////////////////////////////////////////////////////////////////////
+                                  LifterLMS Panel                               
+      ////////////////////////////////////////////////////////////////////////*/
+
+      $wp_customize->add_panel( 'whitedot_lifterlms_panel' , array(
+          'priority' => 80,
+          'capability' => 'edit_theme_options',
+          'theme_supports' => '',
+          'title' => __( 'LifterLMS Settings', 'whitedot' ),
+          
           )
-       )
-    ) );
+      );
 
-    $wp_customize->add_setting( 'whitedot_single_course_metaauthor' , array(
-        'transport' => 'refresh',
-        'default'    =>  'true',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        
-        )
-    );
+      //Course Catalog
+      $wp_customize->add_section( 'whitedot_course_catalog_section' , array(
+          'title'      => __('Course Catelog','whitedot'),
+          'priority'   => 10,
+          'panel'        => 'whitedot_lifterlms_panel',
+      ) );
 
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'whitedot_single_course_metaauthor',
-            array(
-                'label'          => __( 'Show Meta Author(Below Title)', 'whitedot' ),
-                'section'        => 'whitedot_single_course_section',
-                'type'           => 'checkbox',
-                
+      $wp_customize->add_setting( 'whitedot_course_catalog_sidebar_layout',
+         array(
+            'default' => 'sidebarnone',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_course_catalog_sidebar_layout',
+         array(
+            'label' => __( 'Sidebar Layout', 'whitedot' ),
+            'section' => 'whitedot_course_catalog_section',
+            'choices' => array(
+               'sidebarleft' => array(
+                  'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
+                  'name' => __( 'Left Sidebar', 'whitedot' )
+               ),
+               'sidebarnone' => array(
+                  'image' => get_template_directory_uri() . '/img/fullwidth.png',
+                  'name' => __( 'No Sidebar', 'whitedot' )
+               ),
+               'sidebarright' => array(
+                  'image' => get_template_directory_uri() . '/img/right-sidebar.png',
+                  'name' => __( 'Right Sidebar', 'whitedot' )
+               )
             )
-        )
-    );
+         )
+      ) );
 
-    $wp_customize->add_setting( 'whitedot_single_course_metadate' , array(
-        'transport' => 'refresh',
-        'default'    =>  'true',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        
-        )
-    );
+      $wp_customize->add_setting( 'whitedot_course_catalog_column',
+         array(
+            'default' => 3,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_sanitize_integer'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_course_catalog_column',
+         array(
+            'label' => esc_html__( 'Course Catalog Columns', 'whitedot' ),
+            'section' => 'whitedot_course_catalog_section',
+            'input_attrs' => array(
+               'min' => 1, 
+               'max' => 6, 
+               'step' => 1, 
+            ),
+         )
+      ) );
 
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'whitedot_single_course_metadate',
-            array(
-                'label'          => __( 'Show Meta Date(Below Title)', 'whitedot' ),
-                'section'        => 'whitedot_single_course_section',
-                'type'           => 'checkbox',
-                
+      //Membership Catalog
+      $wp_customize->add_section( 'whitedot_membership_catalog_section' , array(
+          'title'      => __('Membership Catelog','whitedot'),
+          'priority'   => 20,
+          'panel'        => 'whitedot_lifterlms_panel',
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_membership_catalog_sidebar_layout',
+         array(
+            'default' => 'sidebarnone',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_membership_catalog_sidebar_layout',
+         array(
+            'label' => __( 'Sidebar Layout', 'whitedot' ),
+            'section' => 'whitedot_membership_catalog_section',
+            'choices' => array(
+               'sidebarleft' => array(
+                  'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
+                  'name' => __( 'Left Sidebar', 'whitedot' )
+               ),
+               'sidebarnone' => array(
+                  'image' => get_template_directory_uri() . '/img/fullwidth.png',
+                  'name' => __( 'No Sidebar', 'whitedot' )
+               ),
+               'sidebarright' => array(
+                  'image' => get_template_directory_uri() . '/img/right-sidebar.png',
+                  'name' => __( 'Right Sidebar', 'whitedot' )
+               )
             )
-        )
-    );
+         )
+      ) );
 
-    //Single Lesson 
-    $wp_customize->add_section( 'whitedot_single_lesson_section' , array(
-        'title'      => __('Single Lesson','whitedot'),
-        'priority'   => 40,
-        'panel'        => 'whitedot_lifterlms_panel',
-    ) );
+      $wp_customize->add_setting( 'whitedot_membership_catalog_column',
+         array(
+            'default' => 3,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_sanitize_integer'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Slider_Custom_Control( $wp_customize, 'whitedot_membership_catalog_column',
+         array(
+            'label' => esc_html__( 'Membership Catalog Columns', 'whitedot' ),
+            'section' => 'whitedot_membership_catalog_section',
+            'input_attrs' => array(
+               'min' => 1, 
+               'max' => 6, 
+               'step' => 1, 
+            ),
+         )
+      ) );
 
-    $wp_customize->add_setting( 'whitedot_single_lesson_sidebar_layout',
-       array(
-          'default' => 'sidebarright',
+      //Dashboard
+      $wp_customize->add_section( 'whitedot_llms_dashboard_section' , array(
+          'title'      => __('Dashboard','whitedot'),
+          'priority'   => 25,
+          'panel'        => 'whitedot_lifterlms_panel',
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_llms_dashboard_sidebar_layout',
+         array(
+            'default' => 'sidebarnone',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_llms_dashboard_sidebar_layout',
+         array(
+            'label' => __( 'Sidebar Layout', 'whitedot' ),
+            'section' => 'whitedot_llms_dashboard_section',
+            'choices' => array(
+               'sidebarleft' => array(
+                  'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
+                  'name' => __( 'Left Sidebar', 'whitedot' )
+               ),
+               'sidebarnone' => array(
+                  'image' => get_template_directory_uri() . '/img/fullwidth.png',
+                  'name' => __( 'No Sidebar', 'whitedot' )
+               ),
+               'sidebarright' => array(
+                  'image' => get_template_directory_uri() . '/img/right-sidebar.png',
+                  'name' => __( 'Right Sidebar', 'whitedot' )
+               )
+            )
+         )
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_show_dashboard_nav_icon',
+         array(
+            'default' => 0,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_switch_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_dashboard_nav_icon',
+         array(
+            'label' => esc_html__( 'Show Navigation Icons', 'whitedot' ),
+            'section' => 'whitedot_llms_dashboard_section'
+         )
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_llms_duplicate_titles' , array(
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_single_lesson_sidebar_layout',
-       array(
-          'label' => __( 'Sidebar Layout', 'whitedot' ),
-          'section' => 'whitedot_single_lesson_section',
-          'choices' => array(
-             'sidebarleft' => array(
-                'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
-                'name' => __( 'Left Sidebar', 'whitedot' )
-             ),
-             'sidebarnone' => array(
-                'image' => get_template_directory_uri() . '/img/fullwidth.png',
-                'name' => __( 'No Sidebar', 'whitedot' )
-             ),
-             'sidebarright' => array(
-                'image' => get_template_directory_uri() . '/img/right-sidebar.png',
-                'name' => __( 'Right Sidebar', 'whitedot' )
-             )
+          'default'    =>  '',
+          'sanitize_callback' => 'whitedot_sanitize_checkbox',
+          
           )
-       )
-    ) );
+      );
 
-    $wp_customize->add_setting( 'whitedot_single_lesson_metaauthor' , array(
-        'transport' => 'refresh',
-        'default'    =>  'true',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'whitedot_single_lesson_metaauthor',
-            array(
-                'label'          => __( 'Show Meta Author(Below Title)', 'whitedot' ),
-                'section'        => 'whitedot_single_lesson_section',
-                'type'           => 'checkbox',
-                
-            )
-        )
-    );
-
-    $wp_customize->add_setting( 'whitedot_single_lesson_metadate' , array(
-        'transport' => 'refresh',
-        'default'    =>  'true',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'whitedot_single_lesson_metadate',
-            array(
-                'label'          => __( 'Show Meta Date(Below Title)', 'whitedot' ),
-                'section'        => 'whitedot_single_lesson_section',
-                'type'           => 'checkbox',
-                
-            )
-        )
-    );
-
-    //Single Membership 
-    $wp_customize->add_section( 'whitedot_single_membership_section' , array(
-        'title'      => __('Single Membership','whitedot'),
-        'priority'   => 50,
-        'panel'        => 'whitedot_lifterlms_panel',
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_single_membership_sidebar_layout',
-       array(
-          'default' => 'sidebarnone',
-          'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_single_membership_sidebar_layout',
-       array(
-          'label' => __( 'Sidebar Layout', 'whitedot' ),
-          'section' => 'whitedot_single_membership_section',
-          'choices' => array(
-             'sidebarleft' => array(
-                'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
-                'name' => __( 'Left Sidebar', 'whitedot' )
-             ),
-             'sidebarnone' => array(
-                'image' => get_template_directory_uri() . '/img/fullwidth.png',
-                'name' => __( 'No Sidebar', 'whitedot' )
-             ),
-             'sidebarright' => array(
-                'image' => get_template_directory_uri() . '/img/right-sidebar.png',
-                'name' => __( 'Right Sidebar', 'whitedot' )
-             )
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'whitedot_llms_duplicate_titles',
+              array(
+                  'label'          => __( 'Remove Duplicate Titles', 'whitedot' ),
+                  'section'        => 'whitedot_llms_dashboard_section',
+                  'type'           => 'checkbox',
+                  
+              )
           )
-       )
-    ) );
+      );
 
-    $wp_customize->add_setting( 'whitedot_single_membership_metaauthor' , array(
-        'transport' => 'refresh',
-        'default'    =>  'true',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        
-        )
-    );
 
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'whitedot_single_membership_metaauthor',
-            array(
-                'label'          => __( 'Show Meta Author(Below Title)', 'whitedot' ),
-                'section'        => 'whitedot_single_membership_section',
-                'type'           => 'checkbox',
-                
+      //Single Course 
+      $wp_customize->add_section( 'whitedot_single_course_section' , array(
+          'title'      => __('Single Course','whitedot'),
+          'priority'   => 30,
+          'panel'        => 'whitedot_lifterlms_panel',
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_single_course_sidebar_layout',
+         array(
+            'default' => 'sidebarright',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_single_course_sidebar_layout',
+         array(
+            'label' => __( 'Sidebar Layout', 'whitedot' ),
+            'section' => 'whitedot_single_course_section',
+            'choices' => array(
+               'sidebarleft' => array(
+                  'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
+                  'name' => __( 'Left Sidebar', 'whitedot' )
+               ),
+               'sidebarnone' => array(
+                  'image' => get_template_directory_uri() . '/img/fullwidth.png',
+                  'name' => __( 'No Sidebar', 'whitedot' )
+               ),
+               'sidebarright' => array(
+                  'image' => get_template_directory_uri() . '/img/right-sidebar.png',
+                  'name' => __( 'Right Sidebar', 'whitedot' )
+               )
             )
-        )
-    );
+         )
+      ) );
 
-    $wp_customize->add_setting( 'whitedot_single_membership_metadate' , array(
-        'transport' => 'refresh',
-        'default'    =>  'true',
-        'sanitize_callback' => 'whitedot_sanitize_checkbox',
-        
-        )
-    );
+      $wp_customize->add_setting( 'whitedot_single_course_metaauthor' , array(
+          'transport' => 'refresh',
+          'default'    =>  'true',
+          'sanitize_callback' => 'whitedot_sanitize_checkbox',
+          
+          )
+      );
 
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'whitedot_single_membership_metadate',
-            array(
-                'label'          => __( 'Show Meta Date(Below Title)', 'whitedot' ),
-                'section'        => 'whitedot_single_membership_section',
-                'type'           => 'checkbox',
-                
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'whitedot_single_course_metaauthor',
+              array(
+                  'label'          => __( 'Show Meta Author(Below Title)', 'whitedot' ),
+                  'section'        => 'whitedot_single_course_section',
+                  'type'           => 'checkbox',
+                  
+              )
+          )
+      );
+
+      $wp_customize->add_setting( 'whitedot_single_course_metadate' , array(
+          'transport' => 'refresh',
+          'default'    =>  'true',
+          'sanitize_callback' => 'whitedot_sanitize_checkbox',
+          
+          )
+      );
+
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'whitedot_single_course_metadate',
+              array(
+                  'label'          => __( 'Show Meta Date(Below Title)', 'whitedot' ),
+                  'section'        => 'whitedot_single_course_section',
+                  'type'           => 'checkbox',
+                  
+              )
+          )
+      );
+
+      //Single Lesson 
+      $wp_customize->add_section( 'whitedot_single_lesson_section' , array(
+          'title'      => __('Single Lesson','whitedot'),
+          'priority'   => 40,
+          'panel'        => 'whitedot_lifterlms_panel',
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_single_lesson_sidebar_layout',
+         array(
+            'default' => 'sidebarright',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_single_lesson_sidebar_layout',
+         array(
+            'label' => __( 'Sidebar Layout', 'whitedot' ),
+            'section' => 'whitedot_single_lesson_section',
+            'choices' => array(
+               'sidebarleft' => array(
+                  'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
+                  'name' => __( 'Left Sidebar', 'whitedot' )
+               ),
+               'sidebarnone' => array(
+                  'image' => get_template_directory_uri() . '/img/fullwidth.png',
+                  'name' => __( 'No Sidebar', 'whitedot' )
+               ),
+               'sidebarright' => array(
+                  'image' => get_template_directory_uri() . '/img/right-sidebar.png',
+                  'name' => __( 'Right Sidebar', 'whitedot' )
+               )
             )
-        )
-    );
+         )
+      ) );
 
-    //Course Catalog
-    $wp_customize->add_section( 'whitedot_footer_settings_section' , array(
-        'title'      => __('Footer Settings','whitedot'),
-        'priority'   => 110,
-    ) );
-
-    $wp_customize->add_setting( 'whitedot_show_footer_branding',
-       array(
-          'default' => 1,
+      $wp_customize->add_setting( 'whitedot_single_lesson_metaauthor' , array(
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_switch_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_footer_branding',
-       array(
-          'label' => esc_html__( 'Show Footer Branding', 'whitedot' ),
-          'section' => 'whitedot_footer_settings_section'
-       )
-    ) );
+          'default'    =>  'true',
+          'sanitize_callback' => 'whitedot_sanitize_checkbox',
+          
+          )
+      );
 
-    $wp_customize->add_setting( 'whitedot_show_footer_social_icons',
-       array(
-          'default' => 0,
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'whitedot_single_lesson_metaauthor',
+              array(
+                  'label'          => __( 'Show Meta Author(Below Title)', 'whitedot' ),
+                  'section'        => 'whitedot_single_lesson_section',
+                  'type'           => 'checkbox',
+                  
+              )
+          )
+      );
+
+      $wp_customize->add_setting( 'whitedot_single_lesson_metadate' , array(
           'transport' => 'refresh',
-          'sanitize_callback' => 'whitedot_switch_sanitization'
-       )
-    );
-     
-    $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_footer_social_icons',
-       array(
-          'label' => esc_html__( 'Show Social Icons', 'whitedot' ),
-          'description' => esc_html__( "Don't forget to configure 'Social Icons' Menu in Menus Settings.", "whitedot" ),
-          'section' => 'whitedot_footer_settings_section'
-       )
-    ) );
+          'default'    =>  'true',
+          'sanitize_callback' => 'whitedot_sanitize_checkbox',
+          
+          )
+      );
+
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'whitedot_single_lesson_metadate',
+              array(
+                  'label'          => __( 'Show Meta Date(Below Title)', 'whitedot' ),
+                  'section'        => 'whitedot_single_lesson_section',
+                  'type'           => 'checkbox',
+                  
+              )
+          )
+      );
+
+      //Single Membership 
+      $wp_customize->add_section( 'whitedot_single_membership_section' , array(
+          'title'      => __('Single Membership','whitedot'),
+          'priority'   => 50,
+          'panel'        => 'whitedot_lifterlms_panel',
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_single_membership_sidebar_layout',
+         array(
+            'default' => 'sidebarnone',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_image_radio_options_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Image_Radio_Button_Custom_Control( $wp_customize, 'whitedot_single_membership_sidebar_layout',
+         array(
+            'label' => __( 'Sidebar Layout', 'whitedot' ),
+            'section' => 'whitedot_single_membership_section',
+            'choices' => array(
+               'sidebarleft' => array(
+                  'image' =>  get_template_directory_uri() . '/img/left-sidebar.png', 
+                  'name' => __( 'Left Sidebar', 'whitedot' )
+               ),
+               'sidebarnone' => array(
+                  'image' => get_template_directory_uri() . '/img/fullwidth.png',
+                  'name' => __( 'No Sidebar', 'whitedot' )
+               ),
+               'sidebarright' => array(
+                  'image' => get_template_directory_uri() . '/img/right-sidebar.png',
+                  'name' => __( 'Right Sidebar', 'whitedot' )
+               )
+            )
+         )
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_single_membership_metaauthor' , array(
+          'transport' => 'refresh',
+          'default'    =>  'true',
+          'sanitize_callback' => 'whitedot_sanitize_checkbox',
+          
+          )
+      );
+
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'whitedot_single_membership_metaauthor',
+              array(
+                  'label'          => __( 'Show Meta Author(Below Title)', 'whitedot' ),
+                  'section'        => 'whitedot_single_membership_section',
+                  'type'           => 'checkbox',
+                  
+              )
+          )
+      );
+
+      $wp_customize->add_setting( 'whitedot_single_membership_metadate' , array(
+          'transport' => 'refresh',
+          'default'    =>  'true',
+          'sanitize_callback' => 'whitedot_sanitize_checkbox',
+          
+          )
+      );
+
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'whitedot_single_membership_metadate',
+              array(
+                  'label'          => __( 'Show Meta Date(Below Title)', 'whitedot' ),
+                  'section'        => 'whitedot_single_membership_section',
+                  'type'           => 'checkbox',
+                  
+              )
+          )
+      );
+
+      //Course Catalog
+      $wp_customize->add_section( 'whitedot_footer_settings_section' , array(
+          'title'      => __('Footer Settings','whitedot'),
+          'priority'   => 110,
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_show_footer_branding',
+         array(
+            'default' => 1,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_switch_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_footer_branding',
+         array(
+            'label' => esc_html__( 'Show Footer Branding', 'whitedot' ),
+            'section' => 'whitedot_footer_settings_section'
+         )
+      ) );
+
+      $wp_customize->add_setting( 'whitedot_show_footer_social_icons',
+         array(
+            'default' => 0,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'whitedot_switch_sanitization'
+         )
+      );
+       
+      $wp_customize->add_control( new WhiteDot_Toggle_Switch_Custom_control( $wp_customize, 'whitedot_show_footer_social_icons',
+         array(
+            'label' => esc_html__( 'Show Social Icons', 'whitedot' ),
+            'description' => esc_html__( "Don't forget to configure 'Social Icons' Menu in Menus Settings.", "whitedot" ),
+            'section' => 'whitedot_footer_settings_section'
+         )
+      ) );
+    }
 
 
 
@@ -1496,8 +1500,12 @@ if ( ! function_exists( 'whitedot_switch_sanitization' ) ) {
  * @return integer  Returned integer value
  */
 if ( ! function_exists( 'whitedot_sanitize_integer' ) ) {
-    function whitedot_sanitize_integer( $input ) {
-        return (int) $input;
+    function whitedot_sanitize_integer($input){
+      $input = absint($input);
+
+      // If the input is an absolute integer, return it.
+      // otherwise, return the default.
+      return ($input ? $input : $setting->default);
     }
 }
 
