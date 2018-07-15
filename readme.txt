@@ -96,7 +96,7 @@ GNU General Public License for more details.
 * Minor Improvement
 
 = 1.0.9 - July 15 2018
-* Minor Improvement
+* Added new Customizer options for woocommerce shop page product column. Now you can select different product column for mobile and tablet version.
 
 
 == Credits ==
