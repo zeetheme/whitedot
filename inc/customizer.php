@@ -692,6 +692,54 @@ function whitedot_customize_register( $wp_customize ) {
          )
       ) );
 
+      $wp_customize->add_setting( 'whitedot_shop_product_column_tablet' , array(
+          'default' => 'column-2',
+          'sanitize_callback' => 'whitedot_sanitize_choice',
+          
+          )
+      );
+
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'whitedot_shop_product_column_tablet',
+              array(
+                  'label'          => __( 'Product Column (Tablet)', 'whitedot' ),
+                  'section'        => 'whitedot_woocommerce_shop_section',
+                  'type'           => 'select',
+                  'choices'        => array(
+                      'column-1'      => 'Two Columns (No Spacing)',
+                      'column-2'       => 'Two Columns (With Spacing)',
+                      'column-3'       => 'One Column',
+                  )
+              )
+          )
+      );
+
+      $wp_customize->add_setting( 'whitedot_shop_product_column_mobile' , array(
+          'default' => 'column-3',
+          'sanitize_callback' => 'whitedot_sanitize_choice',
+          
+          )
+      );
+
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+              $wp_customize,
+              'whitedot_shop_product_column_mobile',
+              array(
+                  'label'          => __( 'Product Column (Mobile)', 'whitedot' ),
+                  'section'        => 'whitedot_woocommerce_shop_section',
+                  'type'           => 'select',
+                  'choices'        => array(
+                      'column-1'      => 'Two Columns (No Spacing)',
+                      'column-2'       => 'Two Columns (With Spacing)',
+                      'column-3'       => 'One Column',
+                  )
+              )
+          )
+      );
+
       $wp_customize->add_setting( 'whitedot_show_add_to_cart',
          array(
             'default' => 1,

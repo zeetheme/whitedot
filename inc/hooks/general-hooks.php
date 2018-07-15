@@ -375,7 +375,7 @@ function whitedot_footer_credits(){
 	?>  //  <?php
 
 	printf( '%1$s -  <a href="%2$s" target="_blank">%3$s</a>',
-		esc_html_e( 'Dedigned By', 'whitedot' ),
+		esc_html_e( 'Designed By', 'whitedot' ),
 		esc_url( 'https://zeetheme.com' ),
 		esc_html( __( 'ZeeTheme', 'whitedot' ) )
 	);
@@ -385,9 +385,3 @@ function whitedot_footer_credits(){
 	<?php
 }
 
-// printf( '%1$s &copy %2$s - <a href="%3$s" target="_blank">%4$s</a>',
-// 			esc_html_e( 'COPYRIGHT', 'whitedot' ),
-// 			esc_html( date( 'Y' ) ),
-// 			esc_url( 'https://zeetheme.com' ),
-// 			esc_html( __( 'ZeeTheme', 'whitedot' ) )
-// 		);

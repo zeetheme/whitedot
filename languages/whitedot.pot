@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/whitedot\n"
 "POT-Creation-Date: 2018-05-18 19:25+0000\n"
 "MIME-Version: 1.0\n"
-"PO-Revision-Date: 2018-07-06 18:35+0000\n"
+"PO-Revision-Date: 2018-07-15 06:44+0000\n"
 "Last-Translator: Vishal Ranjan <admin@zeetheme.com>\n"
 "Language-Team: ZeeTheme\n"
 "MIME-Version: 1.0\n"
@@ -128,6 +128,10 @@ msgid ""
 "performance and make your website lighter than a feather, and fast as a "
 "rocket.The visual customizer will allow you to quickly customize your theme "
 "and reach amazing results."
+msgstr ""
+
+#: inc/woocommerce.php:247
+msgid "Filter"
 msgstr ""
 
 #: inc/customizer.php:195

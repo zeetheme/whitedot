@@ -27,7 +27,7 @@ Experience the perfection in design of this Responsive, Fast and SEO-Friendly Wo
 Yes! WhiteDot is 100% free and open source theme, and it will always will be.
 
 **Where can I find documentation?**
-Yes, WhiteDot has extensive documentation you can find [here](https://zeetheme.com/whitedot-docs/).
+Yes, WhiteDot has extensive documentation you can find [here](https://whitedot-docs.zeetheme.com/).
 
 **Do you offer support?**
 Definitely. We offer support for the free theme in the [WordPress.org forums](https://wordpress.org/support/theme/whitedot).
@@ -93,6 +93,9 @@ GNU General Public License for more details.
 * LifterLMS and WooCommerce Customizer Settings will only appear, when these themes are active.
 
 = 1.0.8 - July 7 2018
+* Minor Improvement
+
+= 1.0.9 - July 15 2018
 * Minor Improvement
 
 

@@ -621,3 +621,9 @@ input[type="number"]:focus {
 .google_fonts_select_control .weight-style {
     margin-bottom: 10px;
 }
+
+/*Customizer*/
+
+#customize-control-whitedot_body_text_line_height #whitedot_body_text_line_height {
+    display: none;
+}

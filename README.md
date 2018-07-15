@@ -116,3 +116,6 @@ If WooCommerce plugin is activated, 2 more widget areas will appear - "Cart Widg
 
 ### 1.0.8 - July 7 2018 ###
 * Minor Improvements
+
+### 1.0.9 - July 15 2018 ###
+* Minor Improvements

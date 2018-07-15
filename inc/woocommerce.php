@@ -244,7 +244,7 @@ function whitedot_shop_product_filter(){
  ?>
 
     <div class="whitedot-product-filter">
-      <a class="whitedot-filter-button" href="#" onclick="filtertoggle()"><i class="fa fa-sliders" aria-hidden="true"></i>Filter</a>
+      <a class="whitedot-filter-button" href="#" onclick="filtertoggle()"><i class="fa fa-sliders" aria-hidden="true"></i><?php esc_html_e( 'Filter', 'whitedot' ); ?> </a>
     </div>
 
     <div id="filter-main" class="filter-wrap"> 

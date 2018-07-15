@@ -2957,7 +2957,7 @@ span.stock.out-of-stock {
 	.woocommerce-page ul.products li.product {
 
 		width: 50%!important;
-		background: #f8f8f8;
+		background: #fff;
 		padding: 0 0 10px 0;
 		text-align: center;
 		border-right: 1px solid #d5d5d5;
