@@ -3,8 +3,8 @@
 
 Contributors: ZeeTheme
 Requires at least: 4.5
-Tested up to: 4.9.6
-Version: 1.0.8
+Tested up to: 4.9.7
+Version: 1.0.91
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-background, custom-colors, threaded-comments, theme-options
@@ -97,6 +97,9 @@ GNU General Public License for more details.
 
 = 1.0.9 - July 15 2018
 * Added new Customizer options for woocommerce shop page product column. Now you can select different product column for mobile and tablet version.
+
+= 1.0.91 - Aug 4 2018
+* Minor Improvement
 
 
 == Credits ==

@@ -8,6 +8,24 @@
     margin-top: 15px;
 }
 
+.whitedot-upgrade-btn {
+    text-decoration: none;
+    background: #008cff;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    min-width: 200px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.whitedot-upgrade-btn:hover {
+    background: #2e83c8;
+    color: #fff;
+}
+
 
 /* ==========================================================================
    Standard Selection

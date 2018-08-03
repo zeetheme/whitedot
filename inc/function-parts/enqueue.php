@@ -46,3 +46,12 @@ function whitedot_customize_custom_js() {
 function whitedot_customizer_control_js() {
     wp_enqueue_script( 'whitedot_customizer_control', get_template_directory_uri() . '/js/customizer-control.js', array( 'jquery', 'customize-controls' ), '20151215', true );
 }
+
+/**
+ * Register and enqueue a custom stylesheet in the WordPress admin.
+ */
+function whitedot_enqueue_custom_admin_style() {
+        wp_register_style( 'whitedot-admin-css', get_template_directory_uri() . '/css/unminified/admin.css', false, '1.0.0' );
+        wp_enqueue_style( 'whitedot-admin-css' );
+}
+

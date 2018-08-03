@@ -1,0 +1,57 @@
+.whitedot-notice{
+    position: relative;
+}
+
+#fs_connect {
+    margin: 5% auto!important;
+    background: #fff!important;
+    box-shadow: 2px 3px 30px rgba(0, 0, 0, 0.12)!important;
+}
+
+#fs_connect .fs-actions {
+    background: transparent!important;
+}
+
+#fs_connect .fs-content{
+	padding-bottom: 0!important;
+}
+
+#fs_connect.fs-anonymous-disabled .fs-actions .button.button-primary {
+    background: #ff7875!important;
+    border: 0;
+    border-radius: 0;
+    color: #fff!important;
+    text-shadow: none!important;
+    height: 45px;
+    transition: .3s;
+    cursor: pointer;
+    box-shadow: none!important;
+}
+
+#fs_connect.fs-anonymous-disabled .fs-actions .button.button-primary:hover {
+    background: #f0716e!important;
+}
+
+#fs_connect .fs-license-key-container {
+    width: 100%!important;
+}
+
+#fs_connect .fs-license-key-container input {
+    height: 45px;
+    background: #f0f0f0;
+    border: 0;
+    box-shadow: none;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+#fs_connect .fs-license-key-container input:focus {
+    background: #e8e8e8;
+}
+
+#fs_connect .fs-license-key-container .dashicons {
+    position: absolute;
+    top: 5px;
+    right: 13px;
+    line-height: 40px;
+}

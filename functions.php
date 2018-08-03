@@ -30,6 +30,9 @@ add_action( 'wp_enqueue_scripts', 'whitedot_customizer_google_fonts' );
 //Enque Js Files
 add_action( 'wp_enqueue_scripts', 'whitedot_scripts' );
 
+//Enque Admin CSS Files
+add_action( 'admin_enqueue_scripts', 'whitedot_enqueue_custom_admin_style' );
+
 //Enque Customizer Js Files
 add_action( 'customize_preview_init', 'whitedot_customize_preview_js' );
 

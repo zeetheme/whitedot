@@ -3066,6 +3066,13 @@ span.stock.out-of-stock {
 	border-radius: 0;
 	background: #e5554e;
 	padding: 15px 50px;
+	height: 50px;
+	font-size: 16px;
+}
+
+.woocommerce .quantity .qty {
+    height: 50px;
+    font-size: 16px;
 }
 
 .woocommerce table.shop_attributes tr:nth-child(even) td,

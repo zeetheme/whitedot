@@ -385,3 +385,5 @@ function whitedot_footer_credits(){
 	<?php
 }
 
+
+

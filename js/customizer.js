@@ -96,5 +96,12 @@
             } );
         } );
   	});
+
+    //Footer Credit
+  wp.customize( 'whitedot_custom_credit', function( value ) {
+    value.bind( function( to ) {
+      $( '.footer-credit' ).text( to );
+    } );
+  } );
 	
 } )( jQuery );

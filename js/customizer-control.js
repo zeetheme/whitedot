@@ -224,5 +224,32 @@
 
     } );
 
+    var customize = this; // Customize object alias.
+    customize( 'whitedot_footer_credit_custom_text', function( value ) {
+ 
+
+        var Controls = [
+            'whitedot_custom_credit'
+        ];
+
+        $.each( Controls, function( index, id ) {
+            customize.control( id, function( control ) {
+                /**
+                 * Toggling function
+                 */
+                var toggle = function( to ) {
+                    control.toggle( to );
+                };
+ 
+                // 1. On loading.
+                toggle( value.get() );
+ 
+                // 2. On value change.
+                value.bind( toggle );
+            } );
+        } );
+
+    } );
+
 } );
 })( jQuery );

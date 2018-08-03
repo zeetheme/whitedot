@@ -26,6 +26,16 @@ function whitedot_customizer_css() {
     <?php } ?>
 <?php } ?>
 
+<?php if( class_exists( 'WooCommerce' ) ) { ?>
+    <?php if ( !is_user_logged_in() ) { ?>
+        @media (min-width: 768px){
+            .woocommerce-account .site-main, .woocommerce-account .site-footer {
+                margin-left: 0!important;
+            }
+        }
+    <?php } ?>
+<?php } ?>
+
 /* Color */
 body{
     color: <?php echo esc_attr( $body_text_color ) ?>;
